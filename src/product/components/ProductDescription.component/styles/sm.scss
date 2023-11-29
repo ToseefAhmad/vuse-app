@@ -1,0 +1,29 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-down(sm) {
+    .app .product-description-component {
+        &-column {
+            flex-basis: 50%;
+        }
+
+        &-title {
+            text-align: center;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .app .product-description-component {
+        $product-description-padding-block-start: 3rem;
+        $product-description-padding-block-end: 0;
+        $product-description-padding-inline: 6rem;
+
+        & {
+            padding-block-start: $product-description-padding-block-start;
+            padding-block-end: $product-description-padding-block-end;
+            padding-inline-start: $product-description-padding-inline;
+            padding-inline-end: $product-description-padding-inline;
+        }
+    }
+}

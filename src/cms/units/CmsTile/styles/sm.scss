@@ -1,0 +1,46 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-down(sm) {
+    .cms-tile {
+        $cms-tile-title-font-size-sm: 2.6rem;
+        $cms-tile-action-height-sm: 4rem;
+
+        .tagline {
+            font-size: $font-size-mobile;
+        }
+
+        img {
+            max-width: unset;
+            width: 100%;
+        }
+
+        &-content-centered .title,
+        .cms-tile-content-centered .tagline {
+            margin-block-end: $m-secondary;
+        }
+
+        &-content {
+            &-centered {
+                width: auto;
+            }
+        }
+
+        .title {
+            font-size: $cms-tile-title-font-size-sm;
+        }
+
+        .tagline {
+            font-size: $font-size-md;
+        }
+
+        .action {
+            height: $cms-tile-action-height-sm;
+            line-height: $cms-tile-action-height-sm;
+        }
+    }
+
+    .cms-tile-row > div {
+        flex-wrap: wrap;
+    }
+}

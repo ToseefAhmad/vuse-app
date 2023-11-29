@@ -1,0 +1,44 @@
+@import '../../../../common/scss/variables';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+
+.app {
+    $recent-searches-padding-block-start: 2.3rem;
+    $recent-searches-padding-block-end: $p-primary;
+    $recent-searches-font-size: 1.2rem;
+
+    .recent-searches-component {
+        & {
+            padding-block-start: $recent-searches-padding-block-start;
+            padding-block-end: $recent-searches-padding-block-end;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+            background-color: $gray-light-secondary;
+        }
+
+        &-title {
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            padding-block-start: 0;
+            font-size: $recent-searches-font-size;
+            font-family: Gotham-Bold;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &-list-item.button-component {
+            border-right: none;
+            margin-block-start: $m-primary;
+            margin-block-end: 0;
+            font-size: $recent-searches-font-size;
+            font-weight: $font-weight-normal;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+        }
+    }
+}

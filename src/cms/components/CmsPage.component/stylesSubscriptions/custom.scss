@@ -1,0 +1,43 @@
+@import '../../../../common/scss/variables';
+
+@media screen and (max-width: 768px) {
+    .cms-subscription-top {
+        $cms-subscription-img-padding-top: 78.6%;
+
+        &-img::before {
+            padding-top: $cms-subscription-img-padding-top;
+        }
+
+        & > div[style*='display: flex'] {
+            flex-direction: column;
+        }
+
+        .pagebuilder-column {
+            width: 100% !important; // Override inline styles
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .cms-subscription-top {
+        $cms-subscription-img: 73.5%;
+        $cms-subscription-img-flex-basis: 38.7%;
+
+        &-img {
+            flex-basis: $cms-subscription-img-flex-basis;
+        }
+
+        &-content {
+            flex-grow: 1;
+        }
+
+        &-img::before {
+            padding-top: $cms-subscription-img;
+        }
+
+        &-content {
+            align-items: center;
+            justify-content: center !important; // Override inline styles
+        }
+    }
+}

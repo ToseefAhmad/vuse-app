@@ -1,0 +1,81 @@
+@import '../../../common/scss/variables';
+@import '~@luft/cart/src/components/CartBar.component/index';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+
+.app {
+    .cart-bar-component {
+        $qty-top: -0.2rem;
+        $qty-right: 0.6rem;
+        $qty-padding-inline: 0.6rem;
+        $qty-line-height: 1.6rem;
+        $cart-icon-width: 2rem;
+        $cart-icon-height: 1.8rem;
+        $cart-bar-title-line-height: 1.2;
+        $cart-bar-component-height: 4rem;
+        $qty-right: 2.2rem;
+
+        & {
+            height: $cart-bar-component-height;
+            z-index: $header-elements-z-index;
+        }
+
+        .cart-bar-component-qty {
+            background-color: $secondary;
+            top: $qty-top;
+            right: $qty-right;
+            padding-inline-start: $qty-padding-inline;
+            padding-inline-end: $qty-padding-inline;
+            line-height: $qty-line-height;
+            font-weight: $font-weight-normal;
+
+            &-position {
+                top: $qty-top;
+                right: $qty-right;
+            }
+        }
+
+        .cart-bar-component-button {
+            background: url('../../../common/resources/svg/glo-cart.svg') no-repeat;
+            background-color: transparent;
+            background-size: $cart-icon-width $cart-icon-height;
+            background-position: top;
+            border: none;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+
+            &:hover,
+            &.button-component-secondary:focus {
+                background-position: top;
+                background-color: transparent;
+            }
+        }
+
+        .cart-bar-component-title {
+            all: unset;
+            color: $light;
+            line-height: $cart-bar-title-line-height;
+            text-transform: capitalize;
+            font-weight: $font-weight-normal;
+            font-size: $font-size-base;
+        }
+    }
+}
+
+[dir='rtl'] .app {
+    $qty-left: 2.2rem;
+
+    .cart-bar-component-qty {
+        &,
+        &-position {
+            left: $qty-left;
+            right: initial;
+        }
+    }
+}

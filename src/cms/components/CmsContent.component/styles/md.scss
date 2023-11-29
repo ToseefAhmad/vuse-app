@@ -1,0 +1,22 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .cms-content-block {
+        $cms-content-block-h1-font-size-md: 4.4rem;
+        $cms-content-block-h2-font-size-md: 3.2rem;
+        $cms-content-block-h3-font-size-md: 2.6rem;
+
+        h1 {
+            font-size: $cms-content-block-h1-font-size-md;
+        }
+
+        h2 {
+            font-size: $cms-content-block-h2-font-size-md;
+        }
+
+        h3 {
+            font-size: $cms-content-block-h3-font-size-md;
+        }
+    }
+}

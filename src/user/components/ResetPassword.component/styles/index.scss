@@ -1,0 +1,34 @@
+@import '../../../../common/scss/variables';
+@import '../../ResetPasswordExpired.component/index';
+@import '~@luft/user/src/components/ResetPassword.component/index';
+
+.app {
+    .reset-password-component {
+        $wrapper-title-padding-block-start: 1.5rem;
+        $wrapper-title-padding-block-end: 1.4rem;
+        $notification-max-width: 80%;
+
+        &-wrapper-title {
+            border-color: $gray-light-primary;
+            padding-block-start: $wrapper-title-padding-block-start;
+            padding-block-end: $wrapper-title-padding-block-end;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+            min-height: auto;
+            font-weight: $font-weight-extrabold;
+            text-transform: uppercase;
+        }
+
+        &-notification {
+            max-width: $notification-max-width;
+            margin-block-start: $m-primary;
+            margin-block-end: $m-primary;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+        }
+
+        .form-group {
+            margin-block-end: 0;
+        }
+    }
+}

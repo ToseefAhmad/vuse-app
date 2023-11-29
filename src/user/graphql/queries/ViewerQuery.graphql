@@ -1,0 +1,20 @@
+query ViewerQuery {
+    viewer {
+        token
+        user {
+            id
+            email
+            first_name
+            last_name
+            prefix
+            phone_number
+            dob
+            gender
+            newsletter_subscribe
+            referral
+            ktp_id
+            consent
+            is_age_verified
+        }
+    }
+}

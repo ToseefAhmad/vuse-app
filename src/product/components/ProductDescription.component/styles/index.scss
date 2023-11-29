@@ -1,0 +1,22 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/product/src/components/ProductDescription.component/index';
+
+.app {
+    .product-description-component {
+        padding-block-start: $p-secondary;
+        padding-block-end: 0;
+        padding-inline-start: $p-secondary;
+        padding-inline-end: $p-secondary;
+        font-size: $font-size-md;
+    }
+}
+
+body:not([dir='rtl']) {
+    .app {
+        .product-description {
+            &-title {
+                font-family: $font-family-secondary;
+            }
+        }
+    }
+}

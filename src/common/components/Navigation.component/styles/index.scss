@@ -1,0 +1,165 @@
+@import '../../../scss/variables';
+@import '../../../../catalog/components/MenuCategories.component/index'; // TODO: rename folder
+@import '~@luft/common/src/components/Navigation.component/index';
+
+.app {
+    .navigation-component {
+        $icon-open-width: 2rem;
+        $icon-open-height: 2rem;
+        $icon-close-width: 1.5rem;
+        $icon-close-height: 1.6rem;
+        $logo-width: 12rem;
+        $logo-height: 3.6rem;
+        $navigation-content-height: 4rem;
+        $toggle-component-margin-inline-end: 1.6rem;
+        $menu-label-text-line-height: 1.2;
+
+        & {
+            height: $header-height-top-bar;
+            max-width: $max-content-width;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            background-color: $darker;
+        }
+
+        &.navbar {
+            background-color: $primary;
+            max-width: $max-content-width;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+        }
+
+        .navigation-component-content {
+            & {
+                flex-grow: 1;
+                height: $navigation-content-height;
+            }
+
+            a {
+                order: 0;
+                z-index: $header-elements-z-index;
+                height: 100%;
+            }
+
+            .navigation-component-toggle {
+                order: 1;
+                margin-inline-start: auto;
+                z-index: $header-elements-z-index;
+            }
+        }
+
+        .navigation-component-content-text {
+            width: $logo-width;
+            height: 100%;
+            display: inline-block;
+            text-indent: -99999px;
+            background: center url('../../../resources/svg/vuse-logo.svg') no-repeat;
+            background-size: $logo-width $logo-height;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            color: $tertiary;
+        }
+
+        .navigation-component-toggle {
+            height: $header-icon-height;
+            margin-inline-end: $toggle-component-margin-inline-end;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navigation-component-toggle .navbar-toggler-icon {
+            width: $icon-close-width;
+            height: $icon-close-height;
+            background-image: url('~bat-core/common/src/resources/svg/base/bat-close-white.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: $icon-close-width $icon-close-height;
+        }
+
+        .navigation-component-toggle .navbar-toggler-text {
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            color: $light;
+            font-size: $font-size-base;
+            line-height: $menu-label-text-line-height;
+        }
+
+        .navigation-component-toggle.collapsed .navbar-toggler-icon {
+            width: $icon-open-width;
+            height: $icon-open-height;
+            background-image: url('../../../resources/svg/glo-menu.svg');
+            background-size: $icon-open-width $icon-open-height;
+        }
+
+        .navigation-component-controls {
+            flex-grow: 0;
+            align-items: center;
+        }
+
+        .cart-bar-component,
+        .account-nav-control-alt-component {
+            .button-component-secondary:not(:disabled):not(.disabled):active,
+            button:active,
+            button:focus {
+                box-shadow: none;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.modal-component.navigation-modal-component {
+    $menu-overlay-background: rgba(0, 0, 0, 0.3);
+    $modal-content-height: calc(100vh - #{$header-height-top-bar});
+
+    & {
+        top: $header-height-top-bar;
+        height: auto;
+    }
+
+    .modal-header {
+        display: none;
+    }
+
+    .modal-body,
+    .modal-component-dialog {
+        background-color: transparent;
+    }
+
+    .modal-component-dialog {
+        width: 100%;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+    }
+
+    .modal-content {
+        overflow-y: auto;
+        background-color: $menu-overlay-background;
+    }
+
+    .modal-full-screen .modal-content {
+        height: $modal-content-height;
+    }
+
+    .settings-nav-control-component-button {
+        font-weight: $font-weight-bold;
+
+        &:hover {
+            border-bottom-color: $primary-border-color;
+        }
+    }
+}
+
+.navigation-modal-component-backdrop {
+    top: $header-height-top-bar;
+}

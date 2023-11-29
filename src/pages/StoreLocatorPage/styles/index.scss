@@ -1,0 +1,16 @@
+@import '~bat-core/pages/StoreLocator/vuse';
+
+.store-locator-page {
+    $store-locator-page-padding-inline-start: calc((100vw - #{$max-content-width}) / 2 - #{$p-primary});
+    $store-locator-page-margin-inline-start: 0.4rem;
+
+    & {
+        padding-inline-start: $store-locator-page-padding-inline-start;
+        margin-inline-start: $store-locator-page-margin-inline-start;
+        background-color: $light;
+    }
+
+    &-body {
+        display: flex;
+    }
+}

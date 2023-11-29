@@ -1,0 +1,14 @@
+.app {
+    .social-providers-component {
+        $button-padding-block: 1.3rem;
+
+        &-item:last-child {
+            margin-block-end: 0;
+        }
+
+        &-button {
+            padding-block-start: $button-padding-block;
+            padding-block-end: $button-padding-block;
+        }
+    }
+}

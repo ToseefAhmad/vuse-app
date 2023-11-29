@@ -1,0 +1,152 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-down(sm) {
+    .home-page {
+        $slider-slide-div-height: 100vh;
+        $home-page-middle-block-top-row-margin-block-end: $m-secondary;
+        $slider-slide-padding-block-end: 7rem;
+        $home-page-bottom-block-title-font-size-sm: 2.4rem;
+        $icon-box-width: 4rem;
+        $slider-slide-text-line-height: 1.8rem;
+        $home-page-middle-block-title-font-size-sm: 2.6rem;
+
+        &-slider {
+            .catalog-product-list-component-products {
+                &::-webkit-scrollbar {
+                    display: inherit;
+                }
+            }
+
+            .slick-slider.slick-initialized {
+                .placed-mobile-bottom div[class*='slider_bannerWrapper'] {
+                    display: flex;
+                }
+
+                .placed-mobile-bottom div[class*='banner_posterOverlay'],
+                .placed-mobile-bottom div[class*='banner_overlay'] {
+                    align-content: flex-end;
+                    justify-content: flex-start;
+                    padding-block-end: $slider-slide-padding-block-end !important;
+                }
+
+                .placed-mobile-bottom div[class*='banner_content'] {
+                    text-align: start;
+                }
+
+                .placed-mobile-bottom div[class*='banner_button'] {
+                    width: auto;
+                }
+
+                .slide-with-text div[class*='banner_content'] strong ~ span {
+                    font-size: $h4-font-size !important;
+                    line-height: $slider-slide-text-line-height;
+                }
+
+                .slide-with-text div[class*='banner_content'] strong {
+                    display: block;
+                }
+            }
+        }
+
+        .homepage-feat-cat-col {
+            padding-block-start: $p-secondary !important;
+            padding-block-end: 0 !important;
+            padding-inline-start: 0 !important;
+            padding-inline-end: 0 !important;
+
+            &:first-child {
+                padding-block-start: 0 !important;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .separator {
+            padding-block-start: $p-tertiary;
+            padding-block-end: $p-tertiary;
+            padding-inline-start: $p-tertiary;
+            padding-inline-end: $p-tertiary;
+        }
+
+        &-middle-block {
+            &-top-row {
+                margin-block-end: $home-page-middle-block-top-row-margin-block-end;
+
+                &_title {
+                    font-size: $home-page-middle-block-title-font-size-sm;
+                    margin-block-end: $m-primary;
+                    text-align: center;
+                }
+
+                &_description {
+                    font-size: $font-size-mobile;
+                    text-align: center;
+                    padding-inline-start: $p-primary;
+                    padding-inline-end: $p-primary;
+                    margin-block-end: $m-primary !important;
+                }
+
+                &_icon-col {
+                    align-items: center;
+                    flex-direction: row !important;
+
+                    &:not(:first-child) {
+                        padding-block-start: $p-secondary !important;
+                    }
+
+                    figure {
+                        width: $icon-box-width;
+                        text-align: center;
+                        margin-inline-end: $m-primary !important;
+                    }
+                }
+            }
+
+            &-bottom-row {
+                & {
+                    margin-block-start: 0 !important;
+                    margin-block-end: 0 !important;
+                    margin-inline-start: 0 !important;
+                    margin-inline-end: 0 !important;
+                }
+
+                &-col {
+                    margin-inline-end: 0 !important;
+                    margin-block-end: $m-secondary !important;
+                    padding-inline-start: 0 !important;
+                    padding-inline-end: 0 !important;
+
+                    figure {
+                        margin-inline-end: 0 !important;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .home-page-products-slider .product-preview-alt-component-link-name,
+        .home-page-products-slider .product-price-component span {
+            font-size: $font-size-mobile;
+        }
+
+        &-bottom-block {
+            &-col {
+                .title {
+                    font-size: $home-page-bottom-block-title-font-size-sm;
+                    text-align: center;
+                    margin-block-end: $m-primary;
+                }
+            }
+
+            &-text-col {
+                font-size: $font-size-mobile;
+            }
+        }
+    }
+}

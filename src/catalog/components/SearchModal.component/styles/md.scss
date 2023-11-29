@@ -1,0 +1,80 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .app {
+        .search-modal-component {
+            $search-results-title-padding-block-start: 6rem;
+            $search-results-title-padding-block-end: $p-primary;
+            $search-results-title-padding-inline: 8rem;
+            $search-results-list-padding-block-start: 0;
+            $search-results-list-padding-block-end: 4rem;
+            $search-results-list-padding-inline: 8rem;
+            $recent-viewed-width: 66.6%;
+            $recent-viewed-padding-block-start: 5.7rem;
+            $recent-viewed-padding-block-end: 4rem;
+            $recent-viewed-padding-inline: 8rem;
+            $search-modal-position: 4rem;
+            $product-recent-body-max-width: 19rem;
+            $product-body-max-width: calc(100vw / 3 - 5.5rem - 3 * #{$m-primary-lg});
+
+            &-content {
+                position: absolute;
+                top: 100%;
+                width: auto;
+                left: $search-modal-position;
+                right: $search-modal-position;
+            }
+
+            &-results-full {
+                &.search-modal-component-recent-results {
+                    .product-preview-alt-component-body {
+                        max-width: $product-recent-body-max-width;
+                    }
+                }
+
+                &:not(.search-modal-component-recent-results) {
+                    .product-preview-alt-component-body {
+                        max-width: $product-body-max-width;
+                    }
+                }
+            }
+
+            &-results-list {
+                padding-block-start: $search-results-list-padding-block-start;
+                padding-block-end: $search-results-list-padding-block-end;
+                padding-inline-start: $search-results-list-padding-inline;
+                padding-inline-end: $search-results-list-padding-inline;
+            }
+
+            &-results-title {
+                padding-block-start: $search-results-title-padding-block-start;
+                padding-block-end: $search-results-title-padding-block-end;
+                padding-inline-start: $search-results-title-padding-inline;
+                padding-inline-end: $search-results-title-padding-inline;
+            }
+
+            .product-price-component {
+                &,
+                &-regular-value,
+                &-final-value,
+                &-discounted-value {
+                    font-size: $font-size-lg;
+                }
+            }
+
+            &-recent-results {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .recent-viewed-product-component {
+                flex: 0 0 $recent-viewed-width;
+                padding-block-start: $recent-viewed-padding-block-start;
+                padding-block-end: $recent-viewed-padding-block-end;
+                padding-inline-start: $recent-viewed-padding-inline;
+                padding-inline-end: $recent-viewed-padding-inline;
+            }
+        }
+    }
+}

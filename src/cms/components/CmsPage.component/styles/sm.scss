@@ -1,0 +1,66 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-down(sm) {
+    .cms-page {
+        $cms-holder-margin-sm: 1.8rem;
+        $cms-promo-font-size-sm: 3.4rem;
+
+        .cms-page-component-homepage {
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+        }
+
+        .cms-holder {
+            padding-block-start: $p-primary;
+            padding-block-end: $p-primary;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+
+            p {
+                font-size: $font-size-mobile;
+                margin-block-start: $cms-holder-margin-sm;
+                margin-block-end: $cms-holder-margin-sm;
+                margin-inline-start: $cms-holder-margin-sm;
+                margin-inline-end: $cms-holder-margin-sm;
+            }
+
+            &-text {
+                padding-block-start: 0 !important;
+                padding-block-end: 0 !important;
+                padding-inline-start: 0 !important;
+                padding-inline-end: 0 !important;
+            }
+        }
+
+        .cms-promo {
+            &-title {
+                font-size: $cms-promo-font-size-sm;
+            }
+        }
+
+        .cms-tabs {
+            [role='tablist'] li {
+                font-size: $font-size-mobile;
+                background-color: $gray-light-secondary;
+            }
+
+            [role='tablist'] [aria-selected='true'] {
+                font-weight: $font-weight-bold;
+            }
+
+            p {
+                * {
+                    font-size: $font-size-mobile !important;
+                }
+            }
+        }
+
+        .cms-faqs .cms-tabs [role='tablist'] {
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+        }
+    }
+}

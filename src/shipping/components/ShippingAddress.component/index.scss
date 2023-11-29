@@ -1,0 +1,12 @@
+@import '../../../common/scss/variables';
+@import '../ShippingAddressBook.component/index';
+@import '../ShippingAddressForm.component/index';
+
+.app {
+    .shipping-address-component {
+        .back-component-control-title {
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+    }
+}

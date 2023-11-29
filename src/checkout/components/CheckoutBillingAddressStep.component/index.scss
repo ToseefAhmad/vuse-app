@@ -1,0 +1,16 @@
+@import '~bat-core/billing/src/components/BillingAddress.component/styles/vuse/index';
+@import '../CheckoutStepPreview.component/index';
+
+.app {
+    .checkout-billing-address-step-component {
+        $body-padding-inline-end: 4.6rem;
+
+        &-preview {
+            .checkout-step-preview-component {
+                &-body {
+                    padding-inline-end: $body-padding-inline-end;
+                }
+            }
+        }
+    }
+}

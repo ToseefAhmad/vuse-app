@@ -1,0 +1,93 @@
+@import '../../../common/scss/variables';
+@import '../../../common/scss/mixins';
+@import '~bat-core/sales/src/components/CouponsWallet.component/styles/vuse/index';
+@import '../../../common/components/Error.component/index';
+
+.checkout-coupons-wallet-component {
+    $icon-width: 1.4rem;
+    $icon-height: 0.9rem;
+    $icon-top: 50%;
+    $icon-margin-block-start: -0.4rem;
+    $coupons-content-max-height: 27rem;
+    $coupons-margin-inline-end: 1.5rem;
+    $coupons-padding-block: 2.4rem;
+    $coupons-item-padding-block-start: 2.8rem;
+    $coupons-item-padding-block-end: $p-primary;
+    $title-line-height: 1.17;
+    $scroll-bar-width: 0.8rem;
+
+    & {
+        background-color: $light;
+        padding-block-start: $coupons-padding-block;
+        padding-block-end: $coupons-padding-block;
+        padding-inline-start: $p-primary;
+        padding-inline-end: $p-tertiary;
+        margin-block-end: $m-primary;
+    }
+
+    &-title {
+        text-transform: uppercase;
+        position: relative;
+        cursor: pointer;
+        font-size: $font-size-base;
+        font-weight: $font-weight-bold;
+        line-height: $title-line-height;
+        margin-inline-end: $coupons-margin-inline-end;
+
+        &::after {
+            content: '';
+            width: $icon-width;
+            height: $icon-height;
+            background-image: url('../../../common/resources/svg/vuse-arrow-down.svg');
+            background-size: $icon-width $icon-height;
+            position: absolute;
+            right: 0;
+            top: $icon-top;
+            margin-block-start: $icon-margin-block-start;
+        }
+
+        &-active {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &-content {
+        transition: max-height 0.3s;
+        max-height: $coupons-content-max-height;
+
+        &-collapsed {
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        @include scrollable-list-media-all('.coupon-wallet-component-item', $scroll-bar-width: $scroll-bar-width);
+    }
+
+    .coupons-wallet-component-item {
+        padding-block-start: $coupons-item-padding-block-start;
+        padding-block-end: $coupons-item-padding-block-end;
+        margin-inline-end: $coupons-margin-inline-end;
+
+        &:last-child {
+            padding-block-end: 0;
+        }
+    }
+
+    .coupons-wallet-component-item-description {
+        white-space: normal;
+    }
+
+    .error-component {
+        white-space: normal;
+        margin-inline-end: $coupons-margin-inline-end;
+    }
+}
+
+[dir='rtl'] {
+    .checkout-coupons-wallet-component {
+        left: 0;
+        right: initial;
+    }
+}

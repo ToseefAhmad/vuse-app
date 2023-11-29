@@ -1,0 +1,16 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .cms-page {
+        $cms-subscription-top-title-font-size-md: 4.4rem;
+        $cms-subscription-top-title-line-height-md: 4.8rem;
+
+        .cms-subscription {
+            &-top-content-title {
+                font-size: $cms-subscription-top-title-font-size-md;
+                line-height: $cms-subscription-top-title-line-height-md;
+            }
+        }
+    }
+}

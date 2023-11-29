@@ -1,0 +1,12 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .app {
+        .checkout-totals-component {
+            &-total-price-value {
+                font-size: $font-size-title;
+            }
+        }
+    }
+}

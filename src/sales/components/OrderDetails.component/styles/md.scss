@@ -1,0 +1,55 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .app {
+        .order-details-component {
+            $order-details-component-info-padding-block-start-md: 2.5rem;
+            $order-details-component-info-padding-block-end-md: 2.6rem;
+            $order-details-component-boxes-padding-block-md: 1.5rem;
+            $order-details-component-total-padding-inline-start-md: 55%;
+
+            &-info {
+                padding-block-start: $order-details-component-info-padding-block-start-md;
+                padding-block-end: $order-details-component-info-padding-block-end-md;
+                padding-inline-start: $p-primary;
+                padding-inline-end: $p-primary;
+            }
+
+            &-boxes {
+                padding-block-start: $order-details-component-boxes-padding-block-md;
+                padding-block-end: $order-details-component-boxes-padding-block-md;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+            }
+
+            &-products {
+                .product-sale-component-wrapper {
+                    padding-block-start: $p-primary;
+                    padding-block-end: $p-primary;
+                    padding-inline-start: $p-primary;
+                    padding-inline-end: $p-primary;
+                }
+            }
+
+            &-total {
+                padding-inline-start: $order-details-component-total-padding-inline-start-md;
+            }
+
+            &-grand-total {
+                .order-totals-item-component-label,
+                .order-totals-item-component-value {
+                    font-size: $font-size-title;
+                }
+            }
+        }
+    }
+
+    [dir='rtl'] {
+        .order-details-component {
+            &-total {
+                padding-inline-start: $p-primary;
+            }
+        }
+    }
+}

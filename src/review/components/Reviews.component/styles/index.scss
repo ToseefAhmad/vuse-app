@@ -1,0 +1,133 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/review/src/components/Reviews.component/index';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+@import '~bat-core/review/src/components/ReviewItem.component/styles/vuse/index';
+@import '~bat-core/review/src/components/ReviewRating.component/styles/vuse/index';
+@import '~bat-core/review/src/components/ReviewSummary.component/styles/vuse/index';
+
+.app .reviews-component {
+    $total-font-size: 1.3rem;
+    $title-font-size: 2.4rem;
+    $total-font-weight: 500;
+    $title-padding-block: 3rem;
+    $review-border-color: #d8d8d8;
+    $reviews-header-background-color: #f7f7f7;
+    $rating-starts-margin-inline-start: 0.6rem;
+    $rating-starts-margin-inline-end: 0.8rem;
+    $load-more-line-height: 1.4;
+
+    & {
+        background-color: $light;
+        margin-block-end: $m-primary-lg;
+    }
+
+    &-title {
+        padding-block-start: $title-padding-block;
+        padding-block-end: $title-padding-block;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        font-size: $title-font-size;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &-header {
+        flex-direction: column;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: $m-primary;
+        margin-inline-end: $m-primary;
+        padding-block-start: $p-primary;
+        border: $border-width solid $review-border-color;
+        background-color: $reviews-header-background-color;
+        font-size: $font-size-lg;
+    }
+
+    &-list {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: $m-primary;
+        margin-inline-end: $m-primary;
+        border: $border-width solid $review-border-color;
+        border-top: none;
+    }
+
+    &-load-more {
+        margin-inline-start: $m-primary;
+        margin-inline-end: $m-primary;
+        padding-block-start: $p-primary;
+        padding-block-end: $p-primary;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        border-top: $border-width solid $review-border-color;
+    }
+
+    &-load-more-action.button-component {
+        & {
+            background-color: transparent;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            font-size: $font-size-md;
+            font-weight: $font-weight-bold;
+            line-height: $load-more-line-height;
+            letter-spacing: unset;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:active,
+        &:not(.disabled):active,
+        &:not(.disabled):active:focus,
+        &:focus {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+
+    &-rating {
+        order: 2;
+        text-transform: uppercase;
+    }
+
+    &-rating-stars {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: $rating-starts-margin-inline-start;
+        margin-inline-end: $rating-starts-margin-inline-end;
+    }
+
+    &-total {
+        order: 1;
+        font-size: $font-size-lg;
+    }
+
+    &-header-actions {
+        order: 3;
+    }
+
+    &-header-action.button-component {
+        padding-block-start: $p-secondary;
+        font-size: $font-size-md;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+
+        &:focus {
+            box-shadow: none;
+            text-decoration: underline;
+        }
+    }
+}
+
+body:not([dir='rtl']) {
+    .app .reviews-component {
+        &-title {
+            font-family: $font-family-secondary;
+        }
+    }
+}

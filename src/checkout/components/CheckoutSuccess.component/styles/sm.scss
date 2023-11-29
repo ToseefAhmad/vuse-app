@@ -1,0 +1,51 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-down(sm) {
+    .app {
+        $success-cms-max-width: 43rem;
+
+        .checkout-success-component {
+            .checkout-success-component-block {
+                margin-block-start: $m-primary;
+                margin-block-end: $m-primary;
+                margin-inline-start: auto;
+                margin-inline-end: auto;
+            }
+
+            .checkout-success-component-block-title {
+                font-size: $h1-font-size;
+            }
+
+            .checkout-success-component-confirmation {
+                font-size: $font-size-mobile;
+            }
+        }
+
+        .success-cms-block {
+            & {
+                margin-block-start: 0 !important; // Override inline style
+                margin-block-end: 0 !important; // Override inline style
+                margin-inline-start: 0 !important; // Override inline style
+                margin-inline-end: 0 !important; // Override inline style
+            }
+
+            & > div {
+                flex-direction: column;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+            }
+
+            .pagebuilder-column {
+                width: 100% !important; // Override inline style
+            }
+
+            .pagebuilder-column + .pagebuilder-column {
+                margin-block-start: $m-secondary !important; // Override inline style
+                margin-inline-start: 0 !important; // Override style that was added for all resolutions
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@import '../../../common/scss/variables';
+@import '../../../gift-card/components/GiftCardCart.component/index';
+@import '../Coupon.component/index';
+@import '~@luft/checkout/src/components/CheckoutAppliedDiscounts.component/index';
+
+.app {
+    .checkout-applied-discounts-component {
+        $applied-coupouns-color: #ccf4ef;
+        $block-padding-inline-start: $p-primary;
+        $block-padding-inline-end: 3.2rem;
+
+        &-coupons.coupon-applied-items-component {
+            background-color: $applied-coupouns-color;
+            padding-inline-start: $block-padding-inline-start;
+            padding-inline-end: $block-padding-inline-end;
+        }
+    }
+}

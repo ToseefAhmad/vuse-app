@@ -1,0 +1,39 @@
+@import '../../../common/scss/variables';
+@import '../../../shipping/components/ShippingMethod.component/index';
+@import '../../../shipping/components/ShippingMethodPreview.component/index';
+@import '../CheckoutStepPreview.component/index';
+
+.app {
+    .checkout-shipping-method-step-component {
+        $body-padding-inline-end: 4.6rem;
+        $icon-holder-width: 3rem;
+        $icon-size: 2rem;
+        $holder-height: 6rem;
+
+        &-preview {
+            .checkout-step-preview-component {
+                &-holder {
+                    height: $holder-height;
+                }
+
+                &-body {
+                    height: 100%;
+                    padding-inline-end: $body-padding-inline-end;
+                }
+
+                &-icon-holder {
+                    width: $icon-holder-width;
+                }
+
+                &-icon-box {
+                    mask-image: url(../../../common/resources/svg/glo-box.svg);
+                }
+
+                &-icon {
+                    width: $icon-size;
+                    mask-size: $icon-size $icon-size;
+                }
+            }
+        }
+    }
+}

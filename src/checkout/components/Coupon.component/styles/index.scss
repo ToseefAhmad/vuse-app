@@ -1,0 +1,51 @@
+@import '../../../../common/scss/variables';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+@import '~bat-core/common/src/components/AppliedDiscountItem.component/styles/vuse/index';
+
+.app {
+    .coupon-component {
+        & {
+            padding-block-start: $p-primary;
+            padding-block-end: $p-primary;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+        }
+
+        &-title {
+            font-size: $font-size-base;
+            font-weight: $font-weight-normal;
+            color: $primary;
+            text-transform: none;
+        }
+
+        &-body {
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            border-bottom: none;
+            display: flex;
+        }
+
+        .form-group {
+            margin-block-end: 0;
+        }
+
+        &-actions,
+        .button-component {
+            padding-block-start: 0; // TODO: Check
+            padding-block-end: 0; // TODO: Check
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+        }
+
+        .form-group-component {
+            margin-inline-end: $m-secondary;
+            flex-grow: 1;
+        }
+
+        .cms-promo-code-title-bold {
+            font-weight: $font-weight-semibold;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import '../../../common/scss/variables';
+@import '~bat-core/common/src/components/Radio.component/styles/vuse/index';
+@import '../ShippingMethodTitle.component/index';
+
+.app {
+    .shipping-method-list-component {
+        $shipping-method-list-component-item-amount-free-font-size: 1.3rem;
+        $shipping-method-list-component-radio-label-padding-block: 1.5rem;
+
+        .shipping-method-list-component-item {
+            border-color: $gray-light-primary;
+        }
+
+        .shipping-method-list-component-item-amount-free {
+            font-size: $shipping-method-list-component-item-amount-free-font-size;
+            text-transform: capitalize;
+        }
+
+        .radio-component {
+            .radio-component-label {
+                padding-block-start: $shipping-method-list-component-radio-label-padding-block;
+                padding-block-end: $shipping-method-list-component-radio-label-padding-block;
+                padding-inline-start: $p-primary;
+                padding-inline-end: $p-primary;
+            }
+        }
+    }
+}

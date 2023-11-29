@@ -1,0 +1,21 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .app {
+        $recent-width: calc(100% / 3);
+        $recent-padding-block: 6rem;
+        $recent-padding-block-start: 5.7rem;
+        $recent-padding-inline-start: 10rem;
+        $recent-padding-inline-end: 4rem;
+
+        .recent-searches-component {
+            order: 1;
+            flex: 0 0 $recent-width;
+            padding-block-start: $recent-padding-block-start;
+            padding-block-end: $recent-padding-block;
+            padding-inline-start: $recent-padding-inline-start;
+            padding-inline-end: $recent-padding-inline-end;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import '../../../../common/scss/variables';
+@import '../../CheckoutDiscountTabs.component/index';
+@import '../../Coupon.component/index';
+
+.app {
+    .checkout-discounts-component {
+        & {
+            margin-block-start: 0;
+            margin-block-end: $m-primary;
+        }
+
+        &-step-checkout-discounts {
+            margin-block-start: 0;
+        }
+
+        .coupon-component {
+            background-color: $light;
+        }
+    }
+}

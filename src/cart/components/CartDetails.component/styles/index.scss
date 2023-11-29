@@ -1,0 +1,14 @@
+@import '../../../../common/scss/variables';
+@import '~bat-core/quote/src/components/CrossSellProducts.component/styles/vuse/index';
+@import '../../../../checkout/components/CheckoutDiscounts.component/index';
+@import '../../../../checkout/components/CheckoutAppliedDiscounts.component/index';
+@import '../../../../checkout/components/CheckoutCouponsWallet.component/index';
+@import '../../../../checkout/components/CheckoutTotals.component/index';
+@import '../../CartItems.component/index';
+@import '../../CartTotals.component/index';
+
+.app {
+    .cart-details-component-content .cart-items-component {
+        margin-block-end: 0;
+    }
+}

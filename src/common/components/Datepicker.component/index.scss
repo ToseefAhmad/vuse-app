@@ -1,0 +1,35 @@
+@import '../../../common/scss/variables';
+
+.app {
+    .datepicker-component {
+        &-popper {
+            left: 0;
+        }
+
+        .datepicker-year-month-component-month,
+        .datepicker-year-month-component-year {
+            padding-block-start: $p-tertiary;
+            padding-block-end: $p-tertiary;
+            padding-inline-start: $p-tertiary;
+            padding-inline-end: $p-primary;
+        }
+    }
+}
+
+[dir='rtl'] {
+    .app {
+        $arrow-background-position-x: 0.5rem;
+
+        .datepicker-component {
+            &-popper {
+                left: initial;
+                right: 0;
+            }
+
+            .datepicker-year-month-component-month,
+            .datepicker-year-month-component-year {
+                background-position-x: $arrow-background-position-x;
+            }
+        }
+    }
+}

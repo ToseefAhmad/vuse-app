@@ -1,0 +1,23 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .app {
+        .register-component {
+            &-title {
+                border-bottom: $primary-border-width solid $gray-light-primary;
+                color: $primary;
+                font-size: $font-size-title;
+                text-transform: uppercase;
+            }
+
+            &-age {
+                max-width: $input-max-width-sm;
+                margin-block-start: $m-primary;
+                margin-block-end: $m-primary;
+                margin-inline-start: auto;
+                margin-inline-end: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@import '../../../common/scss/variables';
+
+.app {
+    .product-sorts-dropdown-component {
+        $product-sorts-dropdown-min-width: 15rem;
+        $dropdown-box-shadow: 0 0 0.9rem 0 $tertiary-border-color;
+        $dropdown-right: 2rem;
+        $dropdown-top: 1rem;
+
+        & {
+            min-width: $product-sorts-dropdown-min-width;
+        }
+
+        .dropdown-component.show {
+            position: absolute;
+            z-index: $zindex-fixed;
+            right: $dropdown-right;
+            top: $dropdown-top;
+            border: $border-width solid $tertiary-border-color;
+            box-shadow: $dropdown-box-shadow;
+        }
+
+        .dropdown-toggle {
+            font-weight: $font-weight-normal;
+
+            &::after {
+                margin-inline-start: inherit;
+            }
+        }
+
+        .dropdown-menu.show {
+            position: static !important;
+            min-width: $product-sorts-dropdown-min-width;
+            transform: none !important;
+            border: none;
+            box-shadow: none;
+        }
+
+        .dropdown-component.show.dropdown .button-component.dropdown-toggle {
+            border: none;
+            box-shadow: none;
+            border-bottom: $border-width solid $primary-border-color;
+        }
+
+        .dropdown-component .dropdown-toggle-value {
+            padding-inline-end: $p-secondary;
+        }
+
+        .dropdown-component .dropdown-item {
+            text-transform: none;
+        }
+    }
+}
+
+[dir='rtl'] {
+    .app {
+        .product-sorts-dropdown-component {
+            $dropdown-left: 2rem;
+
+            .dropdown-component.show {
+                left: $dropdown-left;
+                right: initial;
+            }
+        }
+    }
+}

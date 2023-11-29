@@ -1,0 +1,24 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .app {
+        .checkout-contact-info-component {
+            $body-padding-block-start: 3rem;
+            $social-login-margin-block-end: 4.3rem;
+
+            &-body {
+                padding-block-start: $body-padding-block-start;
+            }
+
+            &-body-message-text,
+            &-login-link {
+                font-size: $font-size-md;
+            }
+
+            .social-providers-component {
+                margin-block-end: $social-login-margin-block-end;
+            }
+        }
+    }
+}

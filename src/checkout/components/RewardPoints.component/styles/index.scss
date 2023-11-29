@@ -1,0 +1,168 @@
+@import '../../../../common/scss/variables';
+
+.reward-points-component {
+    $arrow-icon-width: 1.4rem;
+    $arrow-icon-height: 0.8rem;
+    $arrow-icon-top: 50%;
+    $arrow-icon-margin-block-start: -0.4rem;
+    $content-max-height: 27rem;
+    $title-margin-block-end: 3rem;
+    $text-font-weight: 700;
+    $form-margin-block: 1.5rem;
+    $applied-bg-color: #ccf4ef;
+    $success-icon-size: 1.6rem;
+    $success-icon-bg-size: 100%;
+    $min-points-color: #8c939c;
+
+    & {
+        background-color: $light;
+        padding-block-start: $p-primary;
+        padding-block-end: $p-primary;
+        padding-inline-start: $p-primary;
+        padding-inline-end: $p-primary;
+        position: relative;
+    }
+
+    &-title {
+        text-transform: uppercase;
+        position: relative;
+        cursor: pointer;
+        transition: margin-block-end 300ms ease;
+
+        & {
+            font-size: $font-size-base;
+            font-weight: $font-weight-bold;
+        }
+
+        &::after {
+            content: '';
+            width: $arrow-icon-width;
+            height: $arrow-icon-height;
+            background-image: url('~@luft/common/src/resources/svg/arrow-down.svg');
+            background-size: $arrow-icon-width $arrow-icon-height;
+            position: absolute;
+            right: 0;
+            top: $arrow-icon-top;
+            margin-block-start: $arrow-icon-margin-block-start;
+        }
+
+        &-active {
+            margin-block-end: $title-margin-block-end;
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &-content {
+        transition: max-height 300ms;
+        max-height: $content-max-height;
+
+        &-collapsed {
+            overflow: hidden;
+            max-height: 0;
+        }
+    }
+
+    &-form {
+        margin-block-start: $form-margin-block;
+        margin-block-end: $form-margin-block;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+    }
+
+    &-body {
+        display: flex;
+    }
+
+    &-value {
+        font-weight: $text-font-weight;
+        color: $tertiary;
+    }
+
+    &-input-wrapper {
+        margin-inline-end: $m-secondary;
+        flex-grow: 1;
+    }
+
+    .form-group-component,
+    .form-group {
+        margin-block-end: 0;
+    }
+
+    .form-control-component {
+        margin-block-end: $m-secondary;
+    }
+
+    &-min-points {
+        color: $min-points-color;
+        margin-block-start: $m-secondary;
+        font-size: $font-size-base;
+        font-weight: $font-weight-normal;
+    }
+
+    &-checkbox.checkbox-component-default {
+        .checkbox-component-label-text {
+            display: inline-block;
+        }
+
+        &.reward-points-component-checkbox {
+            .checkbox-component-input:disabled + .checkbox-component-label .checkbox-component-label-text {
+                cursor: auto;
+
+                &::before {
+                    background-color: $disabled-color;
+                }
+            }
+        }
+    }
+
+    &-applied-points {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $applied-bg-color;
+        padding-block-start: $p-primary;
+        padding-block-end: $p-primary;
+        padding-inline-start: $p-primary;
+        padding-inline-end: $p-primary;
+
+        &::before {
+            content: '';
+            display: block;
+            width: $success-icon-size;
+            height: $success-icon-size;
+            background: left top no-repeat url('~bat-core/common/src/resources/svg/base/bat-success.svg');
+            background-size: $success-icon-bg-size;
+            margin-inline-end: $m-secondary;
+        }
+    }
+
+    &-applied-points-title {
+        font-weight: $text-font-weight;
+        margin-inline-end: auto;
+    }
+
+    &-cancel.button-component {
+        text-decoration: underline;
+        text-transform: uppercase;
+        padding-block-start: 0;
+        padding-block-end: 0;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        white-space: nowrap;
+        font-size: $font-size-base;
+    }
+}
+
+[dir='rtl'] {
+    .reward-points-component {
+        &-title {
+            &::after {
+                left: 0;
+                right: initial;
+            }
+        }
+    }
+}

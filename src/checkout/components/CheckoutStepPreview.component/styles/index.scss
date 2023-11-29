@@ -1,0 +1,93 @@
+@import '../../../../common/scss/variables';
+
+.app {
+    .checkout-step-preview-component {
+        $arrow-icon-size: 0.9rem 1.4rem;
+        $placeholder-font-size: 1.3rem;
+        $body-padding-inline-start: $p-primary;
+        $body-padding-inline-end: 4.6rem;
+        $address-preview-line-height: 1.43;
+        $preview-component-button-width: 8rem;
+        $preview-component-button-height: 4rem;
+        $preview-component-button-line-height: 0.5rem;
+
+        &.checkout-step-preview-component-active {
+            .checkout-step-preview-component-holder {
+                border-width: $secondary-border-width;
+            }
+        }
+
+        &-control {
+            &.button-component {
+                padding-block-start: 0;
+                padding-block-end: 0;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+                width: $preview-component-button-width;
+                height: $preview-component-button-height;
+                line-height: $preview-component-button-line-height;
+            }
+        }
+
+        &-body {
+            background-image: url('../../../../common/resources/svg/glo-arrow-right.svg');
+            background-size: $arrow-icon-size;
+            padding-inline-start: $body-padding-inline-start;
+            padding-inline-end: $body-padding-inline-end;
+        }
+
+        &-preview {
+            & {
+                padding-block-start: $p-primary;
+                padding-block-end: $p-primary;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+            }
+
+            &-placeholder {
+                font-size: $placeholder-font-size;
+                color: $primary-border-color;
+                line-height: 1;
+            }
+        }
+
+        &-icon-holder {
+            display: flex;
+            align-items: center;
+        }
+
+        &-icon-mail {
+            mask-image: url('../../../../common/resources/svg/glo-mail.svg');
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+        }
+
+        .address-preview-component {
+            font-size: $font-size-md;
+            line-height: $address-preview-line-height;
+
+            &-name {
+                font-weight: $font-weight-normal;
+            }
+        }
+    }
+}
+
+[dir='rtl'] {
+    .app {
+        .checkout-step-preview-component {
+            $step-preview-background-position-x: 2rem;
+
+            &-body {
+                background-image: url('../../../../common/resources/svg/vuse-arrow-left.svg');
+                background-position-x: $step-preview-background-position-x;
+            }
+        }
+    }
+}

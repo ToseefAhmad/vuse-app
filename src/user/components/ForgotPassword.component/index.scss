@@ -1,0 +1,38 @@
+@import '../../../common/scss/variables';
+@import '~@luft/user/src/components/ForgotPassword.component/index';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+
+.app {
+    .forgot-password {
+        $forgot-password-component-padding-block-start: 1.8rem;
+        $forgot-password-component-padding-block-end: 1.6rem;
+
+        &-component {
+            &-tip {
+                text-align: center;
+            }
+        }
+
+        &-nav-control {
+            &-component {
+                padding-block-start: $forgot-password-component-padding-block-start;
+                padding-block-end: $forgot-password-component-padding-block-end;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+
+                &-button {
+                    &.button-component {
+                        color: $primary;
+                        font-size: $font-size-md;
+                        font-weight: $font-weight-bold;
+                        text-transform: uppercase;
+                    }
+
+                    &.button-component:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .cms-tile {
+        $cms-tile-text-padding-inline-md: 3rem;
+        $cms-tile-title-font-size-md: 3.2rem;
+        $cms-tile-content-centered-min-height: 14.5rem;
+
+        &-content {
+            & {
+                padding-inline-start: $cms-tile-text-padding-inline-md;
+                padding-inline-end: $cms-tile-text-padding-inline-md;
+            }
+
+            &-centered {
+                min-height: $cms-tile-content-centered-min-height;
+            }
+        }
+
+        .title {
+            font-size: $cms-tile-title-font-size-md;
+            margin-bottom: $m-secondary;
+        }
+
+        .tagline {
+            font-size: $font-size-md;
+        }
+
+        .cms-tile-content-centered .tagline {
+            margin-block-end: $m-primary;
+        }
+
+        .button-component.action {
+            width: fit-content;
+        }
+    }
+}

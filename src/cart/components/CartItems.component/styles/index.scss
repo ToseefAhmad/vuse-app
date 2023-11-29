@@ -1,0 +1,21 @@
+@import '../../../../common/scss/variables';
+@import '../../CartItem.component/index';
+
+.app {
+    .cart-items-component {
+        $cart-items-component-cart-item-margin-block-end: 0.2rem;
+
+        & {
+            flex-direction: column;
+        }
+
+        .cart-item-component {
+            border-top: none;
+
+            &:not(:last-child) {
+                margin-block-start: 0;
+                margin-block-end: $cart-items-component-cart-item-margin-block-end;
+            }
+        }
+    }
+}

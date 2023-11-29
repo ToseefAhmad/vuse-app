@@ -1,0 +1,84 @@
+@import '../../../common/scss/variables';
+@import '~@luft/common/src/components/FormGroup.component/index';
+@import '~@luft/common/src/components/Error.component/index';
+@import '~@luft/common/src/components/Loader.component/index';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+
+.checkout-ktp-id-component {
+    $button-min-width: 11rem;
+    $component-validated-background-color: #ceebdd;
+    $icon-holder-size: 4rem;
+    $icon-size: 2.4rem;
+
+    & {
+        position: relative;
+        padding-block-start: $p-primary;
+        padding-block-end: $p-primary;
+        padding-inline-start: $p-primary;
+        padding-inline-end: $p-primary;
+    }
+
+    &-title {
+        margin-block-end: $m-secondary;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+    }
+
+    &-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-code,
+    &-input.form-group-component {
+        flex-grow: 1;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: $m-secondary;
+    }
+
+    &-input.form-group-component .form-group {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+    }
+
+    &-submit {
+        min-width: $button-min-width;
+    }
+
+    &-valid {
+        & {
+            display: flex;
+            background-color: $component-validated-background-color;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: $icon-holder-size;
+            height: $icon-holder-size;
+            background: left top no-repeat url('~bat-core/common/src/resources/svg/base/bat-success.svg');
+            background-size: $icon-size $icon-size;
+        }
+
+        &-title {
+            font-weight: $font-weight-bold;
+            margin-block-end: $m-secondary;
+            text-transform: uppercase;
+        }
+
+        &-code {
+            display: flex;
+            align-items: center;
+        }
+
+        &-code-value {
+            padding-inline-start: $p-tertiary;
+            font-weight: $font-weight-semibold;
+            color: $primary;
+        }
+    }
+}

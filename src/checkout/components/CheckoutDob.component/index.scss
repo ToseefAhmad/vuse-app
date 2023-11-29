@@ -1,0 +1,23 @@
+@import '../../../common/scss/variables';
+@import '../../../common/components/Datepicker.component/index';
+@import '~@luft/common/src/components/FormGroup.component/index';
+
+.checkout-dob-component {
+    & {
+        position: relative;
+        padding-block-start: $p-primary;
+        padding-block-end: $p-primary;
+        padding-inline-start: $p-primary;
+        padding-inline-end: $p-primary;
+    }
+
+    &-title {
+        margin-block-end: $m-secondary;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+    }
+
+    .form-group {
+        margin-block-end: 0;
+    }
+}

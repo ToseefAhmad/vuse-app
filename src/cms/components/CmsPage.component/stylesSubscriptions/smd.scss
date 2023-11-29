@@ -1,0 +1,28 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(smd) {
+    .cms-subscription-top {
+        // Calculated from desktop aspect ratio of image 409/557
+        $cms-subscription-img: 73.5%;
+        // Calculated from the ratio of image width to parent block width 557/1440
+        $cms-subscription-img-flex-basis: 39.7%;
+
+        &-img {
+            flex-basis: $cms-subscription-img-flex-basis;
+        }
+
+        &-content {
+            flex-grow: 1;
+        }
+
+        &-img::before {
+            padding-top: $cms-subscription-img;
+        }
+
+        &-content {
+            align-items: center;
+            justify-content: center !important; // Override inline styles
+        }
+    }
+}

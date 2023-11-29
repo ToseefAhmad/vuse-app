@@ -1,0 +1,56 @@
+@import '../../../../common/scss/variables';
+@import '~bat-core/product/src/components/ProductQtyPlain.component/styles/vuse/index';
+@import '~bat-core/product/src/components/ProductPrice.component/styles/vuse/index';
+@import '../../ProductSku.component/index';
+
+.app {
+    .product-sale-component {
+        $name-line-height: 1.54;
+        $name-margin-block-end: 1.3rem;
+        $price-letter-spacing: 0.018rem;
+        $price-margin-block-end: 1.8rem;
+
+        + .product-sale-component {
+            border-color: $gray-light-primary;
+        }
+
+        &-name {
+            line-height: $name-line-height;
+            margin-block-end: $name-margin-block-end;
+            font-size: $font-size-mobile;
+        }
+
+        .product-price-component-regular,
+        .product-price-component-minimum,
+        .product-price-component-final {
+            margin-block-end: $price-margin-block-end;
+        }
+
+        .product-price-component-regular,
+        .product-price-component-minimum,
+        .product-price-component-final {
+            .product-price-component-regular-value,
+            .product-price-component-minimum-value,
+            .product-price-component-final-value,
+            .product-price-component-discounted-value {
+                font-size: $font-size-md;
+                letter-spacing: $price-letter-spacing;
+                line-height: 1;
+            }
+
+            .product-price-component-regular-value,
+            .product-price-component-minimum-value,
+            .product-price-component-final-value {
+                font-weight: $font-weight-bold;
+            }
+
+            .product-price-component-discounted-value {
+                font-weight: $font-weight-normal;
+            }
+        }
+
+        .variation-plain-component {
+            display: none;
+        }
+    }
+}

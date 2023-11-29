@@ -1,0 +1,13 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(sm) {
+    .app {
+        .error-component {
+            $error-padding-block: 1.1rem;
+
+            padding-block-start: $error-padding-block;
+            padding-block-end: $error-padding-block;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import '../../scss/variables';
+
+.app {
+    .actions-panel-btn-component {
+        top: 0;
+        right: 0;
+    }
+}
+
+[dir='rtl'] {
+    .actions-panel-btn-component {
+        left: 0;
+        right: initial;
+    }
+}

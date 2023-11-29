@@ -1,0 +1,14 @@
+@import '../../../../common/scss/variables';
+@import '~bat-core/product/src/components/ProductSlider.component/styles/vuse/index';
+
+.recommended-category-component {
+    $title-font-size: 2rem;
+
+    .product-list-slider-component-title {
+        text-align: left;
+        font-size: $title-font-size;
+        font-weight: $font-weight-extrabold;
+        color: $primary;
+        text-transform: uppercase;
+    }
+}

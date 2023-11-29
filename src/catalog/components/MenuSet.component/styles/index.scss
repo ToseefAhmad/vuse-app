@@ -1,0 +1,171 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/components/Accordion.component/index';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+@import '~bat-core/common/src/components/AccordionToggle.component/styles/vuse/index';
+
+.app,
+.navigation-modal-component {
+    .menu-set-component {
+        $background-image-size: 2rem 2rem;
+        $first-level-category-height: 6rem;
+        $second-level-category-height: 8rem;
+        $icon-size: 2.2rem;
+        $light-gray-color: #efefef;
+        $second-level-icon-size: 4rem;
+        $arrow-icon-width: 2rem;
+        $arrow-icon-height: 1.5rem;
+        $toggle-button-padding-block: 1.8rem;
+        $all-block-height: 5rem;
+        $mobile-item-image-max-height: 6.4rem;
+
+        & {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accordion-toggle.button-component {
+            border-top: none;
+            color: $light;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        &-category {
+            display: flex;
+            align-items: center;
+            padding-block-start: $p-primary;
+            padding-block-end: $p-primary;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+            max-height: $first-level-category-height;
+            border-top: $border-width solid $dark;
+            color: $light;
+            text-decoration: none;
+            font-size: $font-size-base;
+            font-weight: $font-weight-bold;
+
+            &:hover {
+                color: $light;
+            }
+        }
+
+        &-icon {
+            width: $icon-size;
+            margin-inline-end: $m-secondary;
+        }
+
+        &-toggle.accordion-toggle.button-component {
+            display: flex;
+            align-items: center;
+            max-height: $first-level-category-height;
+            border-top: $border-width solid $dark;
+            padding-block-start: $toggle-button-padding-block;
+            padding-block-end: $toggle-button-padding-block;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+            background-image: url('../../../../common/resources/svg/glo-plus-white.svg');
+            background-size: $background-image-size;
+        }
+
+        &-toggle.accordion-toggle.button-component.accordion-toggle-collapse-show {
+            background-image: url('../../../../common/resources/svg/glo-minus-white.svg');
+            color: $green;
+        }
+
+        &-toggle.accordion-toggle.button-component .nav-item-image-hover {
+            display: none;
+        }
+
+        &-toggle.accordion-toggle.button-component.accordion-toggle-collapse-show {
+            .nav-item-image {
+                display: none;
+            }
+
+            .nav-item-image-hover {
+                display: block;
+            }
+        }
+
+        &-collapse-content .menu-set-component-category {
+            min-height: $second-level-category-height;
+            padding-block-start: $p-secondary;
+            padding-block-end: $p-secondary;
+            padding-inline-start: $p-secondary;
+            padding-inline-end: $p-secondary;
+            border-top: $border-width-lg solid $darker;
+            background-color: $dark-green;
+            align-items: center;
+            font-size: $font-size-md;
+            color: $light;
+        }
+
+        &-collapse-content .menu-set-component-nav:first-child .menu-set-component-category {
+            border-top: none;
+        }
+
+        &-collapse-content .menu-set-component-icon {
+            width: $second-level-icon-size;
+            text-align: center;
+        }
+
+        &-collapse-content .menu-set-component-icon img {
+            max-height: $mobile-item-image-max-height;
+        }
+
+        &-all {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-block-start: $p-primary;
+            padding-block-end: $p-primary;
+            background-color: $dark-secondary;
+            color: $light;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: $font-weight-bold;
+            height: $all-block-height;
+
+            &:hover {
+                color: $light;
+            }
+        }
+
+        &-all-icon {
+            width: $arrow-icon-width;
+            height: $arrow-icon-height;
+            margin-inline-start: $m-tertiary;
+            background-image: url('../../../../common/resources/svg/glo-arrow-right-white.svg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+body:not([dir='rtl']) {
+    .app {
+        .menu-set-component {
+            &-collapse-content .menu-set-component-category {
+                font-family: $font-family-secondary;
+            }
+        }
+    }
+}
+
+[dir='rtl'] {
+    .app,
+    .navigation-modal-component {
+        $icon-background-position-x: 2rem;
+
+        .menu-set-component {
+            &-all-icon {
+                background-image: url('../../../../common/resources/svg/vuse-arrow-white-left.svg');
+            }
+
+            &-toggle.accordion-toggle.button-component {
+                background-position-x: $icon-background-position-x;
+            }
+        }
+    }
+}

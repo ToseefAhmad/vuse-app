@@ -1,0 +1,37 @@
+extend input RegisterInput {
+    """
+    [user][VUSE]
+    User Name Prefix
+    """
+    prefix: String
+
+    """
+    [user][VUSE]
+    User Subscribed Status
+    """
+    is_subscribed: Boolean
+
+    """
+    [user][VUSE]
+    Verified document type
+    """
+    document_type: String
+
+    """
+    [user][VUSE]
+    Verified document number
+    """
+    document_number: String
+
+    """
+    [user][VUSE]
+    Selected location for device pick-up
+    """
+    free_device_pickup_option: String
+
+    """
+    [user][VUSE]
+    Registration URL
+    """
+    registration_url: String
+}

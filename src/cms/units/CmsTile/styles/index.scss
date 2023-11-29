@@ -1,0 +1,95 @@
+@import '../../../../common/scss/variables';
+
+.cms-tile {
+    $cms-tile-action-height: 4rem;
+    $cms-tile-action-width: 14rem;
+    $cms-tile-text-container-bottom: 4.5rem;
+    $cms-tile-text-container-centered-top: 50%;
+    $cms-tile-text-container-centered-transform: translateY(-50%);
+    $cms-tile-tagline-line-height: 2rem;
+
+    & {
+        position: relative;
+    }
+
+    .title {
+        line-height: 1;
+    }
+
+    .title + .button-component {
+        margin-block-start: $m-secondary;
+    }
+
+    &-content {
+        & {
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+            position: absolute;
+            text-align: start;
+            width: 100%;
+        }
+
+        &:not(&-centered) {
+            & {
+                bottom: $cms-tile-text-container-bottom;
+            }
+
+            .button-component {
+                width: inherit;
+            }
+        }
+
+        &-centered {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 100%;
+            top: $cms-tile-text-container-centered-top;
+            transform: $cms-tile-text-container-centered-transform;
+        }
+
+        &-centered .button-component {
+            width: fit-content;
+        }
+
+        &-white {
+            color: $light;
+        }
+    }
+
+    .tagline {
+        line-height: $cms-tile-tagline-line-height;
+    }
+
+    .cms-tile-content-centered .tagline {
+        margin-block-end: $m-tertiary;
+    }
+
+    .button-component.action {
+        height: $cms-tile-action-height;
+        line-height: $cms-tile-action-height;
+        font-size: $font-size-mobile;
+        padding-block-start: 0;
+        padding-block-end: 0;
+    }
+
+    .tagline + .button-component.action {
+        margin-block-start: 0;
+    }
+}
+
+[dir='rtl'] {
+    .cms-tile {
+        $cms-tile-padding-inline-start: 44%;
+        $cms-tile-padding-inline-end: $p-primary;
+
+        &-content-centered {
+            padding-inline-start: $cms-tile-padding-inline-start;
+            padding-inline-end: $cms-tile-padding-inline-end;
+        }
+
+        .title {
+            font-weight: $font-weight-extrabold;
+        }
+    }
+}

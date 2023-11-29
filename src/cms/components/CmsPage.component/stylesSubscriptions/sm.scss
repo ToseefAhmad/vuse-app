@@ -1,0 +1,104 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(sm) {
+    .cms-page {
+        $cms-subscription-row-padding-sm: 5rem;
+        $cms-subscription-title-font-size-sm: 3.2rem;
+        $cms-subscription-how-it-works-title-font-size-sm: 3.2rem;
+        $cms-subscription-how-it-works-item-label-font-size-sm: 2rem;
+        $cms-subscription-how-it-works-item-label-line-height-sm: 2.8rem;
+        $cms-subscription-plan-border-sm: $border-width solid $quaternary-border-color;
+        $cms-subscription-plans-list-margin-bottom-sm: 3rem;
+        $cms-subscription-plan-item-width-sm: 33.3%;
+        $cms-subscription-margin-sm: 3rem;
+        $cms-subscription-button-width-sm: 30rem;
+
+        .cms-subscription {
+            &-row {
+                padding-top: $cms-subscription-row-padding-sm;
+                padding-bottom: $cms-subscription-row-padding-sm;
+            }
+
+            &-title {
+                font-size: $cms-subscription-title-font-size-sm;
+                margin-bottom: $cms-subscription-margin-sm;
+            }
+
+            &-title-plans {
+                margin-bottom: $m-primary;
+            }
+
+            &-how-it-works-item-label {
+                font-size: $cms-subscription-how-it-works-item-label-font-size-sm;
+                line-height: $cms-subscription-how-it-works-item-label-line-height-sm;
+            }
+
+            &-plans-list {
+                border-bottom: $cms-subscription-plan-border-sm;
+                border-right: $cms-subscription-plan-border-sm;
+                margin-bottom: $cms-subscription-plans-list-margin-bottom-sm;
+                font-size: $h3-font-size;
+            }
+
+            &-plan {
+                &-item {
+                    padding: $p-primary;
+                    width: $cms-subscription-plan-item-width-sm;
+                }
+
+                &-item:not(:first-child) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                &-item:not(.cms-subscription-plan-item-empty) {
+                    border-top: $cms-subscription-plan-border-sm;
+                    border-left: $cms-subscription-plan-border-sm;
+                }
+
+                &-item:first-child {
+                    text-align: start;
+                }
+
+                .subscription-type-component {
+                    width: 100%;
+                    margin-bottom: $m-secondary;
+                }
+            }
+
+            &-delivery,
+            &-delivery + .cms-subscription-text {
+                margin-bottom: $cms-subscription-margin-sm;
+            }
+
+            &-button-component {
+                width: $cms-subscription-button-width-sm;
+            }
+
+            &-faq-top {
+                padding-top: $cms-subscription-row-padding-sm;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .cms-subscription-top {
+        // Calculated from mobile aspect ratio of image 294/375
+        $cms-subscription-img-padding-top: 78.6%;
+
+        &-img::before {
+            padding-top: $cms-subscription-img-padding-top;
+        }
+
+        & > div[style*='display: flex'] {
+            flex-direction: column;
+        }
+
+        .pagebuilder-column {
+            width: 100% !important; // Override inline styles
+        }
+    }
+}

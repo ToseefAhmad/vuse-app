@@ -1,0 +1,23 @@
+@import '../../../common/scss/variables';
+
+.app {
+    .shipping-method-preview-component {
+        $text-font-size: $font-size-md;
+
+        & {
+            font-size: $text-font-size;
+        }
+
+        &-name {
+            display: block;
+        }
+
+        &-title {
+            margin-inline-end: $m-tertiary;
+        }
+
+        &-carrier {
+            font-weight: $font-weight-bold;
+        }
+    }
+}

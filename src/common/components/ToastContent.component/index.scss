@@ -1,0 +1,15 @@
+.app {
+    .toast-content-component {
+        $toast-padding-inline-start: 3.5rem;
+        $toast-width: 2.5rem;
+
+        & {
+            padding-inline-start: $toast-padding-inline-start;
+        }
+
+        &::before,
+        &::after {
+            width: $toast-width;
+        }
+    }
+}

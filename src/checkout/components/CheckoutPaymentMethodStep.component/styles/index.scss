@@ -1,0 +1,29 @@
+@import '../../../../common/scss/variables';
+@import '~bat-core/payment/src/components/PaymentMethodList.component/styles/vuse/index';
+@import '../../../../payment/components/PaymentMethodPreview.component/index';
+@import '../../CheckoutStepPreview.component/index';
+
+.app {
+    .checkout-payment-method-step-component {
+        $body-padding-inline-end: 4.6rem;
+
+        &-preview {
+            &-change {
+                display: none;
+            }
+
+            .checkout-step-preview-component {
+                &-holder {
+                    padding-block-start: $p-primary;
+                    padding-block-end: $p-primary;
+                    padding-inline-start: 0;
+                    padding-inline-end: 0;
+                }
+
+                &-body {
+                    padding-inline-end: $body-padding-inline-end;
+                }
+            }
+        }
+    }
+}

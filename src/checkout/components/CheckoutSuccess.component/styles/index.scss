@@ -1,0 +1,115 @@
+@import '../../../../common/scss/variables';
+@import '../../../../user/components/SocialProviders.component/index';
+@import '../../../../user/components/RegisterForm.component/index';
+@import '../../../../cms/components/CmsBlock.component/index';
+@import '../../../../cms/blocks/CheckoutSuccessBottom/index';
+
+.app {
+    $block-body-max-width: 43.5rem;
+    $block-max-width: 68rem;
+    $success-body-max-width: 44rem;
+    $success-block-height: 23.8rem;
+    $success-block-top-margin-block: 7rem;
+    $social-providers-component-margin-block-start: 3rem;
+    $social-providers-component-margin-block-end: 0;
+    $font-size-title: 2.6rem;
+    $success-confirmation-margin-block-end: 3rem;
+    $success-cms-block-margin-inline: -#{$m-primary};
+    $success-cms-margin-block-start: 0;
+    $success-cms-margin-block-end: 6rem;
+    $success-cms-max-width: 144rem;
+    $success-cms-item-margin-inline-start: 0.7rem;
+
+    .checkout-success-component {
+        & {
+            background-color: $page-bg;
+            height: 100%;
+            padding-block-start: 0;
+        }
+
+        &-body {
+            max-width: $success-body-max-width;
+        }
+
+        &-block {
+            max-width: $block-max-width;
+        }
+
+        .social-providers-component {
+            margin-block-start: $social-providers-component-margin-block-start;
+            margin-block-end: $social-providers-component-margin-block-end;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+        }
+
+        .social-providers-component-item:last-child {
+            margin-block-end: 0;
+        }
+
+        .checkout-success-component-block {
+            display: flex;
+            align-items: center;
+            margin-block-start: $success-block-top-margin-block;
+            margin-block-end: $success-block-top-margin-block;
+            min-height: $success-block-height;
+        }
+
+        .checkout-success-component-confirmation {
+            margin-block-end: $success-confirmation-margin-block-end;
+            font-size: $h4-font-size;
+        }
+
+        .checkout-success-component-block-title {
+            font-weight: $font-weight-normal;
+            font-size: $font-size-title;
+            text-transform: uppercase;
+        }
+
+        .checkout-success-component-order {
+            font-size: $font-size-md;
+        }
+
+        .checkout-success-component-continue {
+            max-width: $block-body-max-width;
+            margin-block-start: auto;
+            margin-block-end: auto;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+        }
+
+        .cms-block-component {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: $success-cms-block-margin-inline;
+            margin-inline-end: $success-cms-block-margin-inline;
+        }
+    }
+
+    .success-cms-block {
+        & > div {
+            margin-block-start: $success-cms-margin-block-start;
+            margin-block-end: $success-cms-margin-block-end;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            max-width: $success-cms-max-width;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+        }
+
+        .pagebuilder-column + .pagebuilder-column {
+            margin-inline-start: $success-cms-item-margin-inline-start !important; // Override inline style
+        }
+    }
+}
+
+body:not([dir='rtl']) {
+    .app {
+        .checkout-success-component {
+            &-block-title {
+                font-family: $font-family-secondary;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(smd) {
+    .cms-tile {
+        $cms-tile-content-centered-min-height: 12rem;
+
+        &-content-centered {
+            min-height: $cms-tile-content-centered-min-height;
+        }
+    }
+}

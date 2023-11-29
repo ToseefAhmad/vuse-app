@@ -1,0 +1,50 @@
+@import '../../../../common/scss/variables';
+@import '../../RegisterForm.component/index';
+@import '../../LoginNavControl.component/index';
+@import '../../SocialProviders.component/index';
+@import '~bat-core/restrict-access/src/components/AgeVerificationModal.component/styles/vuse/index';
+@import '~@luft/user/src/components/Register.component/index';
+
+.app {
+    .register-component {
+        $age-verify-background-color: #ccf4ef;
+
+        .back-component-control-title {
+            font-weight: $font-weight-bold;
+        }
+
+        &-age {
+            margin-block-start: $m-primary;
+            margin-block-end: $m-primary;
+            margin-inline-start: $m-primary;
+            margin-inline-end: $m-primary;
+            padding-block-start: $p-primary;
+            padding-block-end: $p-primary;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+            background-color: $age-verify-background-color;
+            font-size: $font-size-md;
+            text-align: center;
+        }
+
+        &-verify-name {
+            padding-block-start: $p-secondary;
+            padding-block-end: $p-tertiary;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            font-weight: $font-weight-bold;
+        }
+
+        &-verify-text {
+            margin-block-end: 0;
+        }
+
+        &-reverify {
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: $p-tertiary;
+            padding-inline-end: $p-tertiary;
+            text-decoration: underline;
+        }
+    }
+}

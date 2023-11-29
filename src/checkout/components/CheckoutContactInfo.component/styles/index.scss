@@ -1,0 +1,35 @@
+@import '../../../../common/scss/variables';
+@import '../../../../user/components/SocialProviders.component/index';
+
+.app {
+    .checkout-contact-info-component {
+        $social-login-margin-block-end: 4rem;
+
+        .back-component-control-title {
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+
+        &-body-message {
+            align-items: center;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            margin-block-start: $m-primary;
+        }
+
+        &-body-message-text,
+        &-login-link {
+            color: $primary;
+        }
+
+        &-login-link {
+            text-transform: uppercase;
+        }
+
+        .social-providers-component {
+            margin-block-end: $social-login-margin-block-end;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+@import '../../../../common/scss/variables';
+@import '../../../../common/components/Loader.component/index';
+@import '../../../../user/components/SocialLogin.component/index';
+@import '~@luft/common/src/scss/mixins';
+@import '~bat-core/common/src/components/Button.component/styles/vuse/index';
+
+.app .social-providers-component {
+    $social-login-icon-size: 2.1rem;
+    $social-login-remove-icon-size: 3rem;
+    $social-login-button-line-height: 3rem;
+
+    & {
+        position: relative;
+        margin-block-start: $m-primary;
+        margin-block-end: $m-primary;
+        padding-block-start: $p-secondary;
+        border-top: $border-width solid $primary-border-color;
+        text-align: center;
+
+        &::before {
+            content: attr(data-separator);
+            position: relative;
+            top: -$m-primary;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: $p-secondary;
+            padding-inline-end: $p-secondary;
+            text-transform: none;
+            color: #7d7d7d;
+            background-color: $light;
+            font-size: 1.1rem;
+        }
+    }
+
+    &-item {
+        display: flex;
+        margin-block-end: $m-secondary;
+    }
+
+    &-button {
+        @extend .button-component;
+        @extend .button-component-tertiary;
+        padding-block-start: $p-secondary;
+        padding-block-end: $p-secondary;
+        padding-inline-start: $p-secondary;
+        padding-inline-end: $p-secondary;
+        width: 100%;
+        height: $button-height;
+        line-height: $social-login-button-line-height;
+    }
+
+    &-button-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            margin-inline-end: $m-secondary;
+        }
+    }
+
+    &-button-facebook &-button-text::before,
+    &-button-google &-button-text::before {
+        content: '';
+        width: $social-login-icon-size;
+        height: $social-login-icon-size;
+        margin-inline-end: $m-secondary;
+        background-repeat: no-repeat;
+        background-size: $social-login-icon-size $social-login-icon-size;
+    }
+
+    &-button-facebook &-button-text::before {
+        background-image: url('../../../../common/resources/svg/bat-facebook-social-providers.svg');
+    }
+
+    &-button-google &-button-text::before {
+        background-image: url('../../../../common/resources/svg/bat-google-social-providers.svg');
+    }
+
+    &-button.button-component:disabled {
+        border: $border-width solid $primary-border-color !important;
+        background-color: $disabled-color !important;
+        opacity: 1;
+        color: $dark !important;
+    }
+
+    &-remove.button-component {
+        width: $social-login-remove-icon-size;
+        height: 100%;
+        margin-inline-start: $m-secondary;
+        padding-block-start: 0;
+        padding-block-end: 0;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        border: 0;
+        background: url('../../../../common/resources/svg/bat-remove.svg') no-repeat 50% 50%;
+        background-size: $social-login-remove-icon-size $social-login-remove-icon-size;
+    }
+}

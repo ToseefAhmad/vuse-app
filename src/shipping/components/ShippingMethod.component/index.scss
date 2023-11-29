@@ -1,0 +1,18 @@
+@import '../../../common/scss/variables';
+@import '../ShippingMethodList.component/index';
+@import '~bat-core/common/src/components/Back.component/styles/vuse/index';
+
+.app {
+    .shipping-method-component {
+        $shipping-method-empty-max-width: 58.4rem;
+
+        &-empty {
+            max-width: $shipping-method-empty-max-width;
+        }
+
+        .back-component-control-title {
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+    }
+}

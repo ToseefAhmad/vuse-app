@@ -1,0 +1,152 @@
+@import '../../../../common/scss/variables';
+@import '~bat-core/subscription/SubscriptionType.component/styles/vuse/index';
+
+.cms-page {
+    $cms-subscription-padding-row: 3rem $p-primary;
+    $cms-subscription-title-font-size: 2.6rem;
+    $cms-subscription-title-font-weight: 800;
+    $cms-subscription-how-it-works-background-color: #f2f2f2;
+    $cms-subscription-how-it-works-max-width: 66rem;
+    $cms-subscription-how-it-works-icon-width: 3.8rem;
+    $cms-subscription-how-it-works-icon-margin-inline-end: 3rem;
+    $cms-subscription-how-it-works-label-line-height: 2.4rem;
+    $cms-subscription-how-it-works-note-font-size: 1.2rem;
+    $cms-subscription-max-width: 95rem;
+    $cms-subscription-delivery-max-width: 43rem;
+    $cms-subscription-faq-max-width: 80rem;
+    $cms-subscription-faq-border-top: $border-width-lg solid $quaternary-border-color;
+    $cms-subscription-top-title-font-size: 3.4rem;
+    $cms-subscription-top-item-line-height: 2rem;
+    $cms-subscription-top-content-padding: 3rem $m-primary $m-primary;
+    $cms-subscription-delivery-font-size: 1.2rem;
+
+    .cms-subscription {
+        &-row {
+            padding: $cms-subscription-padding-row;
+        }
+
+        &-top-img::before {
+            content: '';
+        }
+
+        &-top-content {
+            color: $light;
+            padding: $cms-subscription-top-content-padding;
+        }
+
+        &-top-content-item {
+            display: flex;
+            font-size: $h4-font-size;
+            line-height: $cms-subscription-top-item-line-height;
+            margin-bottom: $m-secondary;
+        }
+
+        &-top-content-icon {
+            margin-inline-end: $m-secondary;
+        }
+
+        &-top-content-title {
+            font-size: $cms-subscription-top-title-font-size;
+            font-weight: $cms-subscription-title-font-weight;
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: $m-primary;
+        }
+
+        &-title {
+            font-size: $cms-subscription-title-font-size;
+            font-weight: $cms-subscription-title-font-weight;
+            line-height: 1;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: $m-primary;
+        }
+
+        &-text {
+            font-size: $h4-font-size;
+            margin-bottom: $m-primary;
+        }
+
+        &-how-it-works {
+            & {
+                background: $cms-subscription-how-it-works-background-color;
+            }
+
+            &-item {
+                & {
+                    display: flex;
+                    align-items: flex-start;
+                    max-width: $cms-subscription-how-it-works-max-width;
+                    margin: 0 auto $m-primary;
+                    font-size: $h4-font-size;
+                }
+
+                &-icon {
+                    width: $cms-subscription-how-it-works-icon-width;
+                    text-align: center;
+                    margin-inline-end: $cms-subscription-how-it-works-icon-margin-inline-end;
+                    padding-top: $p-tertiary;
+                }
+
+                &-label {
+                    font-size: $h2-font-size;
+                    line-height: $cms-subscription-how-it-works-label-line-height;
+                }
+            }
+
+            &-note {
+                color: $dark;
+                font-size: $cms-subscription-how-it-works-note-font-size;
+                max-width: $cms-subscription-how-it-works-max-width;
+                margin: 0 auto;
+            }
+        }
+
+        &-plans {
+            & {
+                max-width: $cms-subscription-max-width;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            &-list {
+                margin-bottom: $m-primary;
+            }
+        }
+
+        &-plan {
+            & {
+                display: flex;
+            }
+
+            &-item-bg {
+                background: $gray-light-secondary;
+            }
+        }
+
+        &-delivery {
+            background: $green;
+            font-size: $cms-subscription-delivery-font-size;
+            max-width: $cms-subscription-delivery-max-width;
+            margin: 0 auto $m-primary;
+            padding: $p-secondary $p-primary;
+        }
+
+        &-faq {
+            & {
+                max-width: $cms-subscription-faq-max-width;
+                margin: 0 auto;
+            }
+
+            &,
+            &.first-item {
+                border-width: $border-width;
+            }
+        }
+
+        &-faq-top {
+            border-top: $cms-subscription-faq-border-top;
+            max-width: $cms-subscription-max-width;
+        }
+    }
+}

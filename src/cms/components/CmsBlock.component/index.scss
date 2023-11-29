@@ -1,0 +1,11 @@
+@import '../../../common/scss/variables';
+
+body:not([dir='rtl']) {
+    .app {
+        .cms-block-component {
+            .vuse-font-family-secondary {
+                font-family: $font-family-secondary;
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'mixins';
+
+@import 'reset';
+@import 'fonts';
+
+@import '~@luft/common/src/components/Loader.component/index';
+@import '~@luft/common/src/components/Error.component/index';
+@import '~@luft/common/src/components/NoCache.component/index';
+@import './components';
+
+body,
+html {
+    color: $primary-font-color;
+    height: 100%;
+
+    #root {
+        height: 100%;
+    }
+
+    a {
+        color: $primary;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+body:not([dir='rtl']) {
+    font-family: $font-family;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: $font-family-secondary;
+    }
+}
+
+body[dir='rtl'] {
+    font-family: $font-family-rtl;
+    text-align: initial;
+}
+
+.app {
+    min-height: 100%;
+
+    .btn-light,
+    .button-component-light {
+        color: $primary-font-color;
+    }
+
+    .address-book-form-component-address-fields-holder,
+    .billing-address-form-component-address-fields-holder,
+    .shipping-address-form-component-address-fields-holder {
+        display: flex;
+        flex-direction: column;
+        margin-block-end: 0;
+
+        .form-group .form-group {
+            margin-block-end: 0;
+        }
+    }
+
+    .cms-block-component {
+        overflow: hidden;
+    }
+}
+
+.locked-scroll {
+    overflow: hidden;
+}

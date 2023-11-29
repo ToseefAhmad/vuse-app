@@ -1,0 +1,7 @@
+{
+  "restrict-access.components.RestrictAccess.component.agree": "أبلغ من العمر 21 عامًا أو أكثر",
+  "restrict-access.components.RestrictAccess.component.disagree": "عمري أقل من 18 سنة",
+  "restrict-access.components.RestrictAccess.component.notice": "* 21 + فقط. قد يضر منتج التبغ الجديد هذا بصحتك ويؤدي إلى الإدمان.",
+  "restrict-access.components.RestrictAccess.component.text": "برجاء التحقق من عمرك قبل دخول الموقع *",
+  "restrict-access.components.RestrictAccess.component.title": "لاستخدام هذا الموقع ، يجب أن يكون\nعمرك 21 عامًا أو أكثر"
+}

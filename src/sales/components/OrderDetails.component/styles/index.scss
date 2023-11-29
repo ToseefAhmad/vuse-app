@@ -1,0 +1,148 @@
+@import '../../../../common/scss/variables';
+@import '../../../../product/components/ProductSale.component/index';
+@import '../../OrderDetailsBox.component/index';
+@import '../../OrderTotalsItem.component/index';
+@import '~bat-core/common/src/components/AddressPreview.component/styles/vuse/index';
+@import '~bat-core/sales/src/components/Reorder.component/styles/vuse/index';
+@import '~bat-core/sales/src/components/OrderStatus.component/styles/vuse/index';
+
+.app {
+    .order-details-component {
+        $order-details-component-info-padding-block-end: 2.3rem;
+        $order-details-component-total-padding-block-start: 3rem;
+        $order-details-component-total-padding-block-end: 3.8rem;
+        $order-details-component-grand-total-item-label-font-size: 1.8rem;
+        $order-details-component-grand-total-item-value-font-size: 2rem;
+        $order-details-component-grand-total-item-letter-spacing: 0.025rem;
+        $order-details-component-product-pane-image-link-flex-basis: 11.6rem;
+
+        &-boxes {
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+        }
+
+        &-product-item {
+            padding: $p-primary;
+        }
+
+        &-info {
+            padding-block-end: $order-details-component-info-padding-block-end;
+
+            &-title {
+                font-weight: $font-weight-normal;
+            }
+        }
+
+        .order-details-component-tracking-number-value {
+            display: inline-block;
+            color: $primary-font-color;
+            margin-inline-start: $m-tertiary;
+        }
+
+        .order-details-component-shipping-method,
+        .order-details-component-product-count {
+            font-weight: $font-weight-normal;
+        }
+
+        .product-image-component {
+            padding-top: 100%;
+        }
+
+        .product-pane-component {
+            &-body {
+                align-self: center;
+            }
+
+            &-image-link {
+                flex-basis: $order-details-component-product-pane-image-link-flex-basis;
+                margin-right: $m-secondary;
+            }
+
+            &-name-link {
+                display: inline-block;
+                margin-bottom: $m-secondary;
+            }
+
+            .product-price-component {
+                margin-bottom: 0;
+            }
+        }
+
+        .product-qty-plain-component-value {
+            text-transform: none;
+        }
+
+        .product-title-component {
+            font-family: $font-family;
+        }
+
+        .product-title-component,
+        .product-qty-plain-component-value {
+            font-weight: $font-weight-normal;
+        }
+
+        .regular-product-price-component,
+        .minimum-product-price-component-value,
+        .final-product-price-component-value {
+            font-weight: $font-weight-bold;
+        }
+
+        .regular-product-price-component,
+        .minimum-product-price-component-value,
+        .final-product-price-component-value {
+            font-size: $font-size-lg;
+        }
+
+        .reorder-component {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &-points-item {
+            display: flex;
+            justify-content: space-between;
+            margin-block-end: $m-secondary;
+            font-size: $font-size-md;
+
+            &-value {
+                font-weight: $font-weight-normal;
+            }
+        }
+
+        &-products,
+        &-total {
+            border-color: $gray-light-primary;
+        }
+
+        &-total {
+            padding-block-start: $order-details-component-total-padding-block-start;
+            padding-block-end: $order-details-component-total-padding-block-end;
+        }
+
+        &-grand-total {
+            & {
+                display: flex;
+                align-items: center;
+                line-height: 1;
+            }
+
+            .order-totals-item-component-label,
+            .order-totals-item-component-value {
+                font-family: $font-family-secondary;
+                font-weight: $font-weight-extrabold;
+                letter-spacing: $order-details-component-grand-total-item-letter-spacing;
+            }
+
+            .order-totals-item-component-label {
+                font-size: $order-details-component-grand-total-item-label-font-size;
+                text-transform: uppercase;
+            }
+
+            .order-totals-item-component-value {
+                font-size: $order-details-component-grand-total-item-value-font-size;
+            }
+        }
+    }
+}

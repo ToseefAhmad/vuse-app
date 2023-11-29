@@ -1,0 +1,69 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(sm) {
+    .app {
+        .reviews-component {
+            $empty-review-padding-block-start: 5rem;
+            $review-component-margin-inline: 8rem;
+            $header-height: 6.1rem;
+            $load-more-padding-block: 3rem;
+
+            & {
+                margin-block-start: 0;
+                margin-block-end: $m-primary-lg;
+                margin-inline-start: $review-component-margin-inline;
+                margin-inline-end: $review-component-margin-inline;
+            }
+
+            &-empty {
+                padding-block-start: $empty-review-padding-block-start;
+            }
+
+            &-total {
+                margin-block-end: 0;
+            }
+
+            &-title {
+                text-align: start;
+            }
+
+            &-header {
+                margin-block-start: 0;
+                margin-block-end: 0;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+                padding-block-start: $p-primary;
+                padding-block-end: $p-primary;
+                padding-inline-start: $p-primary;
+                padding-inline-end: $p-primary;
+                flex-direction: row;
+                height: $header-height;
+            }
+
+            &-rating {
+                order: 0;
+            }
+
+            &-list {
+                margin-block-start: 0;
+                margin-block-end: 0;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+            }
+
+            &-load-more {
+                padding-block-start: $load-more-padding-block;
+                padding-block-end: $load-more-padding-block;
+            }
+
+            &-load-more-action.button-component {
+                min-width: unset;
+            }
+
+            &-header-actions .button-component {
+                padding-block-start: 0;
+            }
+        }
+    }
+}

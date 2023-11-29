@@ -1,0 +1,36 @@
+@import '../../../common/scss/variables';
+@import '../../../common/components/Checkbox.component/index';
+@import '../../../common/components/Datepicker.component/index';
+
+.app {
+    .register-form-component {
+        .checkbox-component {
+            margin-block-end: $m-secondary;
+
+            &-label-text {
+                color: $primary;
+                font-size: $font-size-md;
+                display: block;
+            }
+        }
+
+        &-terms-conditions-link {
+            color: $primary;
+        }
+
+        &-submit {
+            margin-block-end: $m-primary;
+
+            &-title {
+                font-weight: $font-weight-bold;
+                letter-spacing: $letter-spacing-mobile;
+            }
+        }
+
+        &-tooltip {
+            color: $dark-grey;
+            font-size: $font-size-base;
+            margin-bottom: $m-secondary;
+        }
+    }
+}

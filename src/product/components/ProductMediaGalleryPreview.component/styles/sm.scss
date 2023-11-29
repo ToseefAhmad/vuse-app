@@ -1,0 +1,78 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(sm) {
+    .app {
+        .app-content .product-media-gallery-preview-component {
+            $preview-padding-block-start: 0.6rem;
+            $preview-padding-block-end: $p-primary;
+
+            & {
+                padding-block-start: $preview-padding-block-start;
+                padding-block-end: $preview-padding-block-end;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+            }
+
+            &,
+            .swiper-container {
+                position: static;
+                height: auto;
+            }
+        }
+
+        .product-media-gallery-preview-component {
+            $swipe-slider-size: 9.4rem;
+            $swipe-slider-before-height: 0.6rem;
+            $swipe-slide-margin-inline-start: 0.8rem;
+
+            & {
+                display: block;
+            }
+
+            .swiper-wrapper {
+                justify-content: center;
+                flex-direction: row;
+            }
+
+            .swiper-slide {
+                & {
+                    width: $swipe-slider-size;
+                    height: $swipe-slider-size;
+                }
+
+                &:not(:last-child) {
+                    margin-block-end: 0;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: $swipe-slider-before-height;
+                    background-color: transparent;
+                    z-index: 1;
+                    transition: background-color 200ms ease;
+                }
+            }
+
+            .swiper-slide + .swiper-slide {
+                margin-inline-start: $swipe-slide-margin-inline-start;
+            }
+
+            .swiper-slide:hover,
+            .swiper-slide-thumb-active {
+                & {
+                    border: none;
+                    color: $primary;
+                }
+
+                &::before {
+                    background: $primary;
+                }
+            }
+        }
+    }
+}

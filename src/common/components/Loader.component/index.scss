@@ -1,0 +1,58 @@
+@import '../../scss/variables';
+@import '~@luft/common/src/components/Loader.component/index';
+
+.app {
+    .loader-component {
+        $attached-loader-padding-block: 0.2rem;
+        $attached-loader-padding-inline-start: $p-secondary;
+        $attached-loader-padding-inline-end: 0.2rem;
+        $attached-loader-margin-inline-end: -1.2rem;
+        $loader-z-index: 901;
+        $loader-overlay-top: calc(#{$form-control-height} / 2 - #{$spinner-width} / 2);
+
+        &.loader-component-attached {
+            padding-block-start: $attached-loader-padding-block;
+            padding-block-end: $attached-loader-padding-block;
+            padding-inline-start: $attached-loader-padding-inline-start;
+            padding-inline-end: $attached-loader-padding-inline-end;
+            margin-inline-end: $attached-loader-margin-inline-end;
+        }
+
+        &-block-overlay {
+            & {
+                padding-block-start: 0;
+                padding-block-end: 0;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+                z-index: $loader-z-index;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: $form-control-height;
+                content: '';
+                background-color: $black;
+                opacity: $modal-backdrop-opacity;
+            }
+
+            .loader-component-spinner {
+                position: absolute;
+                top: $loader-overlay-top;
+            }
+        }
+    }
+}
+
+[dir='rtl'] {
+    .app {
+        .loader-component {
+            &,
+            .loader-component-spinner {
+                margin-right: initial;
+            }
+        }
+    }
+}

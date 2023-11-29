@@ -1,0 +1,7 @@
+@import '../../common/scss/variables';
+@import '../../cms/components/CmsContent.component/index';
+@import '~bat-core/pages/BlogPost/vuse';
+
+.blog-post-page {
+    background-color: $background-primary-color;
+}

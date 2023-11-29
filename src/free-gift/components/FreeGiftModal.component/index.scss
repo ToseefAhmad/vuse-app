@@ -1,0 +1,15 @@
+@import '../../../common/scss/variables';
+@import '~bat-core/product/src/components/ProductPrice.component/styles/vuse/index';
+@import '~bat-core/product/src/components/ProductPreviewAlt.component/styles/vuse/index';
+@import '~bat-core/product/src/components/ProductSlider.component/styles/vuse/index';
+@import '../../../product/components/VariationAttributes.component/index';
+
+.modal-component.free-gift-modal-component {
+    .modal-confirm .modal-component-body-content {
+        max-width: none;
+    }
+
+    .product-list-slider-component-products {
+        padding-block-end: $p-primary;
+    }
+}

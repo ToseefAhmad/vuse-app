@@ -1,0 +1,22 @@
+@import '../CheckoutStepPreview.component/index';
+@import '../CheckoutAuthorize.component/index';
+@import '../CheckoutContactInfo.component/index';
+
+.app {
+    .checkout-contact-info-step-component {
+        $body-padding-inline-end: 4.6rem;
+        $holder-height: 6.5rem;
+
+        &-preview {
+            .checkout-step-preview-component {
+                &-holder {
+                    height: $holder-height;
+                }
+
+                &-body {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

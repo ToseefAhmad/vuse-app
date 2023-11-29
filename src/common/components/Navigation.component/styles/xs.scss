@@ -1,0 +1,33 @@
+@import '../../../scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-down(xs) {
+    .app {
+        .navigation-component {
+            $navigation-text-width: 8rem;
+            $navigation-text-background-size: $navigation-text-width auto;
+            $navigation-buttons-font-size: 1.1rem;
+
+            .navigation-component-content-text {
+                width: $navigation-text-width;
+                background-size: $navigation-text-background-size;
+            }
+
+            .navigation-component-toggle .navbar-toggler-text,
+            .search-component-button-text,
+            .account-nav-control-alt-component .account-nav-control-alt-component-text,
+            .cart-bar-component .cart-bar-component-title {
+                font-size: $navigation-buttons-font-size;
+            }
+
+            .navigation-component-toggle {
+                margin-inline-end: $m-secondary;
+            }
+
+            .account-nav-control-alt-component,
+            .cart-bar-component-button {
+                margin-inline-start: $m-secondary;
+            }
+        }
+    }
+}

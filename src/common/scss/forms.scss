@@ -1,0 +1,26 @@
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+[dir='rtl'] {
+    $field-valid-padding-inline-end: 6rem;
+    $select-background-position-x: 2rem;
+
+    .form-control-component-secondary .form-control.form-field-valid {
+        padding-inline-end: $field-valid-padding-inline-end;
+        padding-right: $p-primary;
+    }
+
+    select:not([multiple]) {
+        background-position-x: $select-background-position-x;
+    }
+}

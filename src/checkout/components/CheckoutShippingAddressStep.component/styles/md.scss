@@ -1,0 +1,28 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .app {
+        .checkout-shipping-address-step-component {
+            $active-step-preview-padding-block: 0.8rem;
+            $active-step-preview-padding-inline-start: $p-primary;
+            $active-step-preview-padding-inline-end: 4.6rem;
+            $icon-position: center right 2rem;
+
+            &-preview {
+                &.checkout-step-preview-component {
+                    padding-block-start: 0;
+                }
+
+                &.checkout-step-preview-component-active {
+                    .checkout-step-preview-component-body {
+                        padding-block-start: $active-step-preview-padding-block;
+                        padding-block-end: $active-step-preview-padding-block;
+                        padding-inline-start: $active-step-preview-padding-inline-start;
+                        padding-inline-end: $active-step-preview-padding-inline-end;
+                    }
+                }
+            }
+        }
+    }
+}

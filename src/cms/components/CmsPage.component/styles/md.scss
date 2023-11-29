@@ -1,0 +1,117 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-up(md) {
+    .cms-page {
+        $cms-holder-padding-block-start-md: 8rem;
+        $cms-promo-margin-block-end-md: -4rem;
+        $cms-font-size-md: 4rem;
+        $cms-holder-line-height-md: 5.1rem;
+        $cms-tabs-tablist-padding-md: 2.4rem;
+        $cms-tabs-tabpanel-padding-md: 6rem 3rem 0;
+        $cms-page-font-size-md: 1.4rem;
+        $cms-page-title-size-md: 3.2rem;
+        $cms-page-component-padding-block-start-md: 0;
+        $cms-page-component-padding-block-end-md: 8rem;
+        $cms-page-component-padding-inline-md: 8rem;
+        $cms-page-heading-font-size-md: 2.6rem;
+        $cms-accordion-action-font-size-md: 1.4rem;
+        $cms-accordion-action-icon-size-md: 2rem;
+        $cms-list-margin-inline-start-md: 6rem;
+        $cms-negative-margin-md: -$cms-page-component-padding-inline-md;
+
+        & {
+            font-size: $cms-page-font-size-md;
+        }
+
+        &-body {
+            display: flex;
+        }
+
+        &-component {
+            padding-block-start: $cms-page-component-padding-block-start-md;
+            padding-block-end: $cms-page-component-padding-block-end-md;
+            padding-inline-start: $cms-page-component-padding-inline-md;
+            padding-inline-end: $cms-page-component-padding-inline-md;
+        }
+
+        &-component-homepage {
+            padding: 0;
+        }
+
+        &-title {
+            font-size: $cms-page-title-size-md;
+        }
+
+        &-heading {
+            font-size: $cms-page-heading-font-size-md;
+            text-transform: uppercase;
+        }
+
+        .cms-accordion {
+            &-action {
+                font-size: $cms-accordion-action-font-size-md;
+            }
+
+            &-action::after {
+                width: $cms-accordion-action-icon-size-md;
+                height: $cms-accordion-action-icon-size-md;
+                background-size: $cms-accordion-action-icon-size-md $cms-accordion-action-icon-size-md;
+            }
+        }
+
+        .page-builder-component {
+            ol,
+            ul {
+                margin-inline-start: $cms-list-margin-inline-start-md;
+            }
+        }
+
+        .cms-promo {
+            margin-block-end: $cms-promo-margin-block-end-md;
+        }
+
+        .cms-holder {
+            & {
+                padding-block-start: $cms-holder-padding-block-start-md;
+            }
+
+            &-title {
+                font-size: $cms-font-size-md;
+                line-height: $cms-holder-line-height-md;
+            }
+
+            p {
+                font-size: $font-size-md;
+                margin-block-start: $m-primary;
+                margin-block-end: $m-primary;
+            }
+        }
+
+        .cms-tabs {
+            [role='tablist'] li {
+                padding-inline-start: $cms-tabs-tablist-padding-md;
+                padding-inline-end: $cms-tabs-tablist-padding-md;
+                padding-block-start: $cms-tabs-tablist-padding-md;
+                padding-block-end: $cms-tabs-tablist-padding-md;
+            }
+
+            // Override inline styles
+            [role='tabpanel'] > div {
+                padding-block-start: $cms-tabs-tabpanel-padding-md !important;
+                padding-block-end: $cms-tabs-tabpanel-padding-md !important;
+                padding-inline-start: $cms-tabs-tabpanel-padding-md !important;
+                padding-inline-end: $cms-tabs-tabpanel-padding-md !important;
+            }
+        }
+
+        &-text {
+            font-size: $h1-font-size;
+        }
+
+        .cms-row-full-width {
+            margin-inline-start: $cms-negative-margin-md;
+            margin-inline-end: $cms-negative-margin-md;
+        }
+    }
+}

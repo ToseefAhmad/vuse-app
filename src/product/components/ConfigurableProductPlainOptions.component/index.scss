@@ -1,0 +1,20 @@
+@import '../../../common/scss/variables';
+@import '~@luft/product/src/components/ConfigurableProductPlainOptions.component/index';
+
+.app {
+    .configurable-product-plain-options-component {
+        &-variant {
+            padding-right: 0;
+            padding-inline-end: $p-primary;
+        }
+
+        &-title {
+            display: initial;
+            padding-inline-end: $p-tertiary;
+        }
+
+        &-value {
+            text-transform: uppercase;
+        }
+    }
+}

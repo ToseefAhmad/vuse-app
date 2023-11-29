@@ -1,0 +1,63 @@
+@import '../../../../common/scss/variables';
+@import '~@luft/common/src/scss/mixins';
+
+@include media-breakpoint-down(xs) {
+    .cms-page {
+        $cms-subscription-border-xs: $border-width solid $quaternary-border-color;
+        $cms-subscription-subscription-type-padding-xs: 0.6rem 0;
+        $cms-subscription-subscription-type-width-xs: 9rem;
+        $cms-subscription-plan-item-width-xs: 50%;
+        $cms-subscription-plan-item-first-child-padding-xs: 1.5rem $m-primary;
+        $cms-subscription-faq-padding-top-xs: 3rem;
+
+        .cms-subscription {
+            &-plan {
+                & {
+                    flex-wrap: wrap;
+                    border: $cms-subscription-border-xs;
+                    margin-bottom: $m-secondary;
+                }
+
+                &-hidden-mobile {
+                    display: none;
+                }
+
+                .subscription-type-component {
+                    margin-right: $m-secondary;
+                    padding: $cms-subscription-subscription-type-padding-xs;
+                    width: $cms-subscription-subscription-type-width-xs;
+                }
+
+                &-item {
+                    padding: $p-primary;
+                    width: $cms-subscription-plan-item-width-xs;
+                }
+
+                &-item::after {
+                    content: attr(data-subscription-type);
+                    display: block;
+                }
+
+                &-item:first-child {
+                    border-bottom: $cms-subscription-border-xs;
+                    font-size: $h4-font-size;
+                    padding: $cms-subscription-plan-item-first-child-padding-xs;
+                    text-align: start;
+                    width: 100%;
+                }
+
+                &-item:last-child {
+                    border-inline-start: $cms-subscription-border-xs;
+                }
+            }
+
+            &-button-component {
+                width: 100%;
+            }
+
+            &-faq-top {
+                padding-top: $cms-subscription-faq-padding-top-xs;
+            }
+        }
+    }
+}

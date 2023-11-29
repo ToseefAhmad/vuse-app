@@ -1,0 +1,25 @@
+@import '../../../../common/scss/variables';
+
+.cms-content-block {
+    $cms-content-block-h1-font-size: 3.4rem;
+    $cms-content-block-h2-font-size: 2.6rem;
+    $cms-content-block-h3-font-size: 2.4rem;
+
+    h1 {
+        font-size: $cms-content-block-h1-font-size;
+    }
+
+    h2 {
+        font-size: $cms-content-block-h2-font-size;
+    }
+
+    h3 {
+        font-size: $cms-content-block-h3-font-size;
+    }
+
+    h1,
+    h2,
+    h3 {
+        text-transform: uppercase;
+    }
+}

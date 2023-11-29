@@ -1,0 +1,486 @@
+@import '../../../../common/scss/variables';
+@import '../../CmsBlock.component/index';
+@import '../../CmsRegister.component/index';
+@import '~@luft/cms/src/components/CmsPage.component/index';
+@import '~bat-core/cms/src/components/CmsMenuSet.component/styles/vuse/index';
+@import '~bat-core/common/src/components/AccordionToggle.component/styles/vuse/index';
+@import '~bat-core/product/src/components/ProductSlider.component/styles/vuse/index';
+
+.cms-page {
+    $cms-page-max-width: 76rem;
+    $cms-title-font-size: 4.4rem;
+    $cms-holder-padding-inline: 3rem;
+    $cms-promo-font-size: 6rem;
+    $cms-promo-line-height: 0.96;
+    $cms-max-width: 98rem;
+    $cms-holder-margin-block-start: 0;
+    $cms-holder-margin-block-end: $m-primary;
+    $cms-holder-font-size: 2.5rem;
+    $cms-holder-line-height: 1.2;
+    $cms-faqs-line-height: 2.4rem;
+    $cms-tabs-max-width: 77rem;
+    $cms-tabs-tablist-width: 100vw;
+    $cms-tabs-tablist-height: 0.1rem;
+    $cms-tabs-tablist-margin-inline: -0.1rem;
+    $cms-tabs-tablist-max-width: 50%;
+    $cms-tabs-tablist-min-height: 6.4rem;
+    $cms-tabs-tabpanel-padding-block: 4rem $p-primary;
+    $cms-tabs-tabpanel-padding-inline: 3rem;
+    $cms-tabs-tabpanel-line-height: 2.3rem;
+    $cms-tabs-tabpanel-p-margin-block-start: 0;
+    $cms-tabs-tabpanel-p-margin-block-end: $m-primary;
+    $cms-promo-top: 50%;
+    $cms-promo-left: 50%;
+    $cms-promo-width: 90%;
+    $cms-tabs-color: #f4f4f4;
+    $cms-page-font-size: 1.3rem;
+    $cms-page-title-size: 2.6rem;
+    $cms-page-component-padding-block-start: 0;
+    $cms-page-component-padding-block-end: 6rem;
+    $heading-font-size: 2.4rem;
+    $cms-page-title-border-bottom: $secondary-border-width solid #d8d8d8;
+    $cms-arrow-link-icon-width: 2rem;
+    $cms-arrow-link-icon-height: 1.4rem;
+    $cms-arrow-link-icon-top: 0.3rem;
+    $cms-arrow-link-icon-margin-inline-start: 0.6rem;
+    $cms-arrow-link-hover-icon-margin-inline-start: 1.2rem;
+    $cms-arrow-link-icon-transition: margin-inline-start 200ms;
+    $cms-list-padding-inline-start: 1.4rem;
+    $cms-accordion-item-border: $secondary-border-width solid #d8d8d8;
+    $cms-accordion-action-font-size: 1.3rem;
+    $cms-accordion-action-padding-block-start: 2.5rem;
+    $cms-accordion-action-padding-block-end: 2.3rem;
+    $cms-accordion-action-padding-inline-end: $p-primary;
+    $cms-accordion-action-icon-size: 2rem;
+    $cms-table-border: 1px solid #d8d8d8;
+    $cms-table-header-background: #f7f7f7;
+    $cms-negative-margin: -$m-primary;
+
+    & {
+        overflow: hidden;
+        background-color: $light;
+    }
+
+    &-component {
+        width: 100%;
+        padding-block-start: $cms-page-component-padding-block-start;
+        padding-block-end: $cms-page-component-padding-block-end;
+        padding-inline-start: $p-primary;
+        padding-inline-end: $p-primary;
+    }
+
+    &-title {
+        border-bottom: $cms-page-title-border-bottom !important; // Override inline style
+        font-size: $cms-page-title-size;
+        font-weight: $font-weight-bold;
+        padding-block-start: $p-primary-lg;
+        padding-block-end: $p-primary-lg;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        margin-block-end: $m-primary-lg;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &-heading {
+        font-size: $heading-font-size;
+        text-transform: uppercase;
+        margin-block-start: $m-primary-lg;
+        margin-block-end: $m-primary;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+    }
+
+    &-title + .cms-page-heading {
+        margin-block-start: 0;
+    }
+
+    .cms-arrow-link {
+        color: $dark;
+        display: inline-block;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .cms-arrow-link::after {
+        content: '';
+        position: absolute;
+        background-image: url('~bat-core/common/src/resources/svg/base/bat-arrow-right.svg');
+        background-size: $cms-arrow-link-icon-width $cms-arrow-link-icon-height;
+        margin-inline-start: $cms-arrow-link-icon-margin-inline-start;
+        height: $cms-arrow-link-icon-height;
+        width: $cms-arrow-link-icon-width;
+        left: 100%;
+        top: $cms-arrow-link-icon-top;
+        transition: $cms-arrow-link-icon-transition;
+    }
+
+    .cms-arrow-link:hover::after {
+        margin-inline-start: $cms-arrow-link-hover-icon-margin-inline-start;
+    }
+
+    .cms-accordion {
+        & {
+            border-bottom: $cms-accordion-item-border;
+        }
+
+        &.first-item {
+            border-top: $cms-accordion-item-border;
+        }
+
+        &.active {
+            padding-block-end: $p-primary;
+        }
+
+        &-action {
+            font-size: $cms-accordion-action-font-size;
+            font-weight: $font-weight-normal;
+            padding-block-start: $cms-accordion-action-padding-block-start;
+            padding-block-end: $cms-accordion-action-padding-block-end;
+            padding-inline-start: 0;
+            padding-inline-end: $cms-accordion-action-padding-inline-end;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        &-action::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: $cms-accordion-action-icon-size;
+            height: $cms-accordion-action-icon-size;
+            background-image: url('~bat-core/common/src/resources/svg/base/bat-increment.svg');
+            background-size: $cms-accordion-action-icon-size $cms-accordion-action-icon-size;
+        }
+
+        &.active .cms-accordion-action::after {
+            background-image: url('~bat-core/common/src/resources/svg/base/bat-decrement.svg');
+        }
+
+        & > div > *:not(.cms-accordion-action) {
+            display: none;
+        }
+
+        &.active > div > * {
+            display: inherit;
+        }
+
+        @for $index from 1 through 6 {
+            h#{$index} {
+                &.cms-accordion-action {
+                    font-weight: $font-weight-bold;
+                }
+            }
+        }
+    }
+
+    .page-builder-component {
+        ol,
+        ul {
+            margin-inline-start: $m-primary;
+        }
+
+        ol li,
+        ul li {
+            padding-inline-start: $cms-list-padding-inline-start;
+            margin-block-end: $m-primary;
+        }
+
+        ol ol {
+            list-style-type: lower-latin;
+            margin-inline-start: $m-primary-lg;
+            padding-block-start: $p-primary;
+        }
+
+        p {
+            margin-block-end: $m-primary;
+        }
+
+        .cms-block-component p {
+            margin-block-end: 0;
+        }
+
+        table {
+            border: $cms-table-border;
+        }
+
+        table td {
+            padding-block-start: $p-primary;
+            padding-block-end: $p-primary;
+            padding-inline-start: $p-primary;
+            padding-inline-end: $p-primary;
+        }
+
+        table tr:first-child td {
+            background-color: $cms-table-header-background;
+            font-weight: $font-weight-bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .product-preview-alt-component-footer {
+            display: none;
+        }
+    }
+
+    .cms-promo {
+        & {
+            position: relative;
+            color: $light;
+            text-align: center;
+        }
+
+        &-title {
+            position: absolute;
+            top: $cms-promo-top;
+            left: $cms-promo-left;
+            width: $cms-promo-width;
+            font-size: $cms-promo-font-size;
+            font-weight: $font-weight-bold;
+            line-height: $cms-promo-line-height;
+            text-transform: uppercase;
+            transform: translate(-50%, -50%);
+            font-size: $cms-title-font-size;
+        }
+    }
+
+    .cms-holder {
+        & {
+            max-width: $cms-max-width;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            padding-block-start: $p-primary-lg;
+            padding-block-end: $p-primary-lg;
+            padding-inline-start: $cms-holder-padding-inline;
+            padding-inline-end: $cms-holder-padding-inline;
+            text-align: center;
+            color: $light;
+        }
+
+        &-title {
+            margin-block-start: $cms-holder-margin-block-start;
+            margin-block-end: $cms-holder-margin-block-end;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            font-size: $cms-holder-font-size;
+            font-weight: $font-weight-semibold;
+            line-height: $cms-holder-line-height;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-block-start: $m-secondary;
+            margin-block-end: $m-secondary;
+        }
+
+        a {
+            color: $light;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+    }
+
+    .cms-video {
+        max-width: $cms-max-width;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+
+    .cms-faqs {
+        &-title {
+            margin-block-start: $m-primary;
+            margin-block-end: $m-primary;
+            font-size: $h1-font-size;
+            line-height: $cms-faqs-line-height;
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    .cms-tabs {
+        & {
+            width: 100%;
+            max-width: $cms-tabs-max-width;
+            margin-block-start: 0 !important;
+            margin-block-end: 0 !important;
+            margin-inline-start: auto !important;
+            margin-inline-end: auto !important;
+            border: 0;
+        }
+
+        [class^='tabs_navigationGradient'] {
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        [role='tablist'] {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            overflow: initial;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $cms-tabs-tablist-width;
+                height: $cms-tabs-tablist-height;
+                background-color: $gray-light-primary;
+            }
+
+            &::before {
+                right: 100%;
+            }
+
+            &::after {
+                left: 100%;
+            }
+        }
+
+        [role='tablist'] li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+            margin-inline-start: $cms-tabs-tablist-margin-inline;
+            margin-inline-end: $cms-tabs-tablist-margin-inline;
+            padding-block-start: $p-secondary;
+            padding-block-end: $p-secondary;
+            padding-inline-start: $p-secondary;
+            padding-inline-end: $p-secondary;
+            max-width: $cms-tabs-tablist-max-width;
+            min-height: $cms-tabs-tablist-min-height;
+            border: $border-width solid $light;
+            border-top-color: $cms-tabs-color;
+            border-bottom-color: $gray-light-primary;
+            font-size: $font-size-lg;
+            font-weight: $font-weight-normal;
+            line-height: 1;
+            text-transform: uppercase;
+            text-align: center;
+            background-color: $cms-tabs-color;
+        }
+
+        [role='tablist'] [aria-selected='true'] {
+            color: $primary;
+            border-color: $gray-light-primary $gray-light-primary $light;
+            background-color: $light;
+        }
+
+        // Override inline styles
+        [role='tabpanel'] > div {
+            padding-block-start: $cms-tabs-tabpanel-padding-block !important;
+            padding-block-end: $cms-tabs-tabpanel-padding-block !important;
+            padding-inline-start: $cms-tabs-tabpanel-padding-inline !important;
+            padding-inline-end: $cms-tabs-tabpanel-padding-inline !important;
+        }
+
+        h4 {
+            color: $secondary;
+        }
+
+        * {
+            font-size: $font-size-md;
+            line-height: $cms-tabs-tabpanel-line-height;
+        }
+
+        p {
+            & {
+                margin-block-start: $cms-tabs-tabpanel-p-margin-block-start;
+                margin-block-end: $cms-tabs-tabpanel-p-margin-block-end;
+            }
+
+            &:last-child {
+                margin-block-end: 0;
+            }
+        }
+    }
+
+    .cms-row-with-columns {
+        max-width: $cms-page-max-width;
+    }
+
+    .cms-row-with-columns .cms-page-column-flex {
+        flex-basis: auto;
+    }
+
+    &-text.cms-page-align-center {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .cms-justify-end {
+        justify-content: flex-end;
+    }
+
+    .cms-row-full-width {
+        margin-inline-start: $cms-negative-margin;
+        margin-inline-end: $cms-negative-margin;
+    }
+}
+
+body:not([dir='rtl']) {
+    .cms-page {
+        .cms-accordion {
+            &-action {
+                font-family: $font-family;
+            }
+        }
+    }
+}
+
+[dir='rtl'] {
+    .cms-page {
+        $cms-arrow-transform-rotate: 180deg;
+        $cms-promo-right: 50%;
+
+        .cms-page-title {
+            text-align: initial;
+        }
+
+        .cms-arrow-link::after {
+            transform: rotate($cms-arrow-transform-rotate);
+            left: initial;
+            right: 100%;
+        }
+
+        .cms-promo-title {
+            left: initial;
+            right: $cms-promo-right;
+        }
+
+        .cms-accordion {
+            &-action::after {
+                left: 0;
+                right: initial;
+            }
+        }
+
+        [role='tablist'] {
+            &::before {
+                left: 100%;
+                right: initial;
+            }
+
+            &::after {
+                left: initial;
+                right: 100%;
+            }
+        }
+    }
+}
